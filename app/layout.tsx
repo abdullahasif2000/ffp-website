@@ -27,14 +27,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* ✅ Top Bar */}
+        {/*  Top Bar */}
 <div className="bg-[#EB6D3A] h-10 flex items-center justify-between px-6 text-white text-sm">
   <div className="flex items-center space-x-2">
     <FaPhone className="text-white" />
     <span>0337-8028418</span>
   </div>
 
-  {/* ✅ Social Icons */}
+  {/*  Social Icons */}
   <div className="flex space-x-3">
     <a
       href="#"
@@ -69,7 +69,7 @@ export default function RootLayout({
   </div>
 </div>
 
-        {/* ✅ Logo + Contact Info */}
+        {/*  Logo + Contact Info */}
         <div className="flex items-center justify-between px-4 py-3 bg-white shadow-sm relative z-20">
           <div className="flex items-center space-x-2 text-[#009688] font-medium">
             <FaEnvelope className="text-[#EB6D3A]" />
@@ -97,7 +97,7 @@ export default function RootLayout({
         </div>
 
      {/*  Navigation */}
-<nav className="bg-[#009688] shadow-lg px-8 py-4 flex items-center justify-between sticky top-0 z-50 font-sans">
+<nav className="bg-[#009688] shadow-lg px-8 py-2 flex items-center justify-between sticky top-0 z-50 font-sans">
   {/* Left: Main Nav Links */}
   <ul className="flex space-x-10 text-white font-medium text-sm md:text-base relative">
     {/* Home Dropdown */}
