@@ -34,30 +34,33 @@ function CounterCard({ icon: Icon, label, value }: CounterCardProps) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
-    <div
-      ref={ref}
-      className="relative group bg-white rounded-full shadow-lg border border-orange-300 
-                 p-5 flex flex-col items-center justify-center transition-all duration-300 
-                 hover:shadow-2xl hover:-translate-y-1 hover:bg-gradient-to-br 
-                 hover:from-orange-50 hover:to-teal-50 w-36 h-36"
-    >
-      {/* Glow effect on hover */}
-      <div className="absolute inset-0 rounded-full bg-[#EB6D3A]/10 opacity-0 group-hover:opacity-100 blur-xl transition duration-300"></div>
+    <div ref={ref} className="relative flex items-center justify-center">
+      {/* Gradient border wrapper */}
+      <div className="rounded-full p-[3px] bg-gradient-to-r from-[#009688] to-[#EB6D3A]">
+        {/* Inner circle */}
+        <div
+          className="bg-white rounded-full shadow-lg w-36 h-36 flex flex-col 
+                     items-center justify-center p-6 transition-all duration-400 
+                     hover:shadow-2xl hover:-translate-y-1"
+        >
+          {/* Icon */}
+          <div className="bg-gradient-to-br from-[#EB6D3A] to-[#009688] text-white 
+                          p-3 rounded-full mb-2 shadow-md group-hover:scale-110 
+                          transition-transform duration-300">
+            <Icon size={22} />
+          </div>
 
-      {/* Icon */}
-      <div className="bg-gradient-to-br from-[#EB6D3A] to-orange-500 text-white p-3 rounded-full mb-2 shadow-md group-hover:scale-110 transition-transform duration-300">
-        <Icon size={20} />
+          {/* Number Counter */}
+          <h3 className="text-xl md:text-2xl font-extrabold text-[#EB6D3A] mb-1 drop-shadow-sm">
+            {inView ? <CountUp end={value} duration={2.5} separator="," /> : 0}
+          </h3>
+
+          {/* Label */}
+          <p className="text-gray-700 font-medium text-xs md:text-sm text-center leading-snug">
+            {label}
+          </p>
+        </div>
       </div>
-
-      {/* Number Counter */}
-      <h3 className="text-xl md:text-2xl font-extrabold text-[#EB6D3A] mb-1 drop-shadow-sm">
-        {inView ? <CountUp end={value} duration={2.5} separator="," /> : 0}
-      </h3>
-
-      {/* Label */}
-      <p className="text-gray-700 font-medium text-xs md:text-sm text-center leading-snug">
-        {label}
-      </p>
     </div>
   );
 }
@@ -266,6 +269,7 @@ export default function HomePage() {
         </svg>
       </div>
 
+{/* counter section */}
       <section id="counters" className="py-16 px-6 bg-white">
   <h2 className="text-3xl md:text-4xl font-extrabold mb-7 text-center tracking-wide bg-gradient-to-r from-[#009688] to-[#EB6D3A] bg-clip-text text-transparent">
     Our Impact So Far
@@ -274,7 +278,7 @@ export default function HomePage() {
   {/* Decorative underline */}
   <div className="w-50 h-1 bg-gradient-to-r from-[#009688] to-[#EB6D3A] mx-auto rounded-full mb-12"></div>
 
-  <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-center">
+  <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
     {[
       { label: "Total Years Served", value: 16, icon: FaFlag },
       { label: "Total Beneficiaries", value: 12500, icon: FaUsers },
