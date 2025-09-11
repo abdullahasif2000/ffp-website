@@ -27,47 +27,48 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/*  Top Bar */}
+  {/* Top Bar */}
 <div className="bg-[#EB6D3A] h-10 flex items-center justify-between px-6 text-white text-sm">
+
+  {/* Left - Phone */}
   <div className="flex items-center space-x-2">
     <FaPhone className="text-white" />
     <span>0337-8028418</span>
   </div>
 
-  {/*  Social Icons */}
-  <div className="flex space-x-3">
-    <a
-      href="#"
-      className="p-2 rounded-full bg-blue-600 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-400/50 transition-all transform hover:scale-110"
-    >
-      <FaFacebookF className="text-white text-sm" />
-    </a>
-    <a
-      href="#"
-      className="p-2 rounded-full bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 hover:opacity-90 hover:shadow-lg hover:shadow-pink-400/50 transition-all transform hover:scale-110"
-    >
-      <FaInstagram className="text-white text-sm" />
-    </a>
-    <a
-      href="#"
-      className="p-2 rounded-full bg-red-600 hover:bg-red-700 hover:shadow-lg hover:shadow-red-400/50 transition-all transform hover:scale-110"
-    >
-      <FaYoutube className="text-white text-sm" />
-    </a>
-    <a
-      href="#"
-      className="p-2 rounded-full bg-black hover:bg-gray-800 hover:shadow-lg hover:shadow-gray-600/50 transition-all transform hover:scale-110"
-    >
-      <FaTiktok className="text-white text-sm" />
-    </a>
-    <a
-      href="#"
-      className="p-2 rounded-full bg-blue-500 hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-300/50 transition-all transform hover:scale-110"
-    >
-      <FaLinkedinIn className="text-white text-sm" />
-    </a>
+  {/* Center - Hashtag */}
+  <div className="hidden md:block text-center font-semibold tracking-wide">
+    #YouDonateWeServe
+  </div>
+
+  {/* Right - Social Icons with dividers */}
+  <div className="flex items-center">
+    {[
+      { icon: FaFacebookF, color: "hover:text-[#1877F2]" },
+      { icon: FaInstagram, color: "hover:text-[#E1306C]" },
+      { icon: FaYoutube, color: "hover:text-[#FF0000]" },
+      { icon: FaTiktok, color: "hover:text-gray-200" },
+      { icon: FaLinkedinIn, color: "hover:text-[#0A66C2]" },
+    ].map((social, idx, arr) => {
+      const Icon = social.icon;
+      return (
+        <div key={idx} className="flex items-center">
+          <a
+            href="#"
+            className={`px-2 text-lg transition-all duration-300 transform hover:scale-125 ${social.color}`}
+          >
+            <Icon />
+          </a>
+          {/* Divider between icons */}
+          {idx !== arr.length - 1 && (
+            <span className="h-4 w-px bg-white/40 mx-1"></span>
+          )}
+        </div>
+      );
+    })}
   </div>
 </div>
+
 
         {/*  Logo + Contact Info */}
         <div className="flex items-center justify-between px-4 py-3 bg-white shadow-sm relative z-20">
@@ -146,16 +147,19 @@ export default function RootLayout({
     )}
   </ul>
 
- {/* Right: Donate Now Button */}
+{/* Right: Donate Now Button */}
 <div>
   <Link
     href="/donate"
-    className="flex items-center gap-2 bg-gradient-to-r from-[#EB6D3A] to-orange-500 text-white px-6 py-3 rounded-full font-bold uppercase tracking-wide shadow-md hover:shadow-lg hover:scale-105 transform transition-all duration-300"
+    className="group flex items-center gap-2 px-6 py-2 rounded-full font-semibold uppercase tracking-wide
+               text-white bg-gradient-to-r from-[#EB6D3A] to-orange-500
+               shadow-md hover:shadow-xl hover:scale-105 transform transition-all duration-300"
   >
     <span>Donate Now</span>
-    <FaHeart className="w-5 h-5 text-white animate-pulse" />
+    <FaHeart className="w-5 h-5 text-white transition-transform duration-300 group-hover:scale-125" />
   </Link>
 </div>
+
 </nav>
 
 
