@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { FaChevronDown } from "react-icons/fa";
 
+
 // Project Data
 const projects = [
   {
@@ -33,7 +34,7 @@ const projects = [
   {
     title: "Aqua Projects",
     description: "Access to clean drinking water for all.",
-    image: "/images/aqua.jpg",
+    image: "/images/projects/aqua.jpg",
     sub: ["Hand Pumps", "Filtration Plants"],
   },
   {
@@ -63,7 +64,7 @@ const projects = [
   {
     title: "Behtar Mustaqbil Project",
     description: "Skill development for a better future.",
-    image: "/images/mustaqbil.jpg",
+    image: "/images/projects/Behtar mustaqbil.png",
     sub: ["Vocational Training", "Career Counseling"],
   },
   {
@@ -81,7 +82,7 @@ const projects = [
   {
     title: "Transgender",
     description: "Programs to empower the transgender community.",
-    image: "/images/transgender.jpg",
+    image: "/images/projects/transgender.jpg",
     sub: ["Skill Training", "Awareness Drives"],
   },
   {
@@ -93,23 +94,25 @@ const projects = [
   {
     title: "CSR Project",
     description: "Corporate partnerships for social impact.",
-    image: "/images/csr.jpg",
+    image: "/images/projects/csr.png",
     sub: ["Employee Volunteering", "CSR Partnerships"],
   },
   {
     title: "Widow Support",
     description: "Providing financial & social support to widows.",
-    image: "/images/widow.jpg",
+    image: "/images/projects/widow support.jpg.png",
     sub: ["Monthly Stipends", "Skill Programs"],
   },
 ];
 
 export default function WorkPage() {
+  const [visibleCount, setVisibleCount] = useState(8); // show 8 first
+
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
 
   return (
     <div className="bg-gray-50">
-      {/* ✅ Hero Section */}
+      {/*  Hero Section */}
 <section className="relative bg-gradient-to-r from-[#EB6D3A] to-[#009688] text-white py-20">
   <div className="relative max-w-4xl mx-auto text-center px-6">
     <h1 className="text-4xl md:text-5xl font-extrabold drop-shadow-lg tracking-tight">
@@ -149,7 +152,7 @@ export default function WorkPage() {
         </svg>
       </div>
       {/* ✅ Section: Programs */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
+      <section id="projects" className="max-w-7xl mx-auto px-6 py-20">
         <h2 className="text-4xl md:text-3xl font-extrabold text-center bg-gradient-to-r from-[#EB6D3A] to-[#009688] bg-clip-text text-transparent mb-6">
   Our Projects
 </h2>
@@ -157,7 +160,8 @@ export default function WorkPage() {
   Explore the wide range of initiatives we are driving to create lasting impact in communities.
 </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-          {projects.map((project, index) => (
+          {projects.slice(0, visibleCount).map((project, index) => (
+
             <div
               key={index}
               className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
@@ -190,7 +194,7 @@ export default function WorkPage() {
                       }
                       className="flex items-center gap-2 text-[#EB6D3A] font-medium hover:text-orange-700 transition"
                     >
-                      Sub Projects
+                      View More
                       <FaChevronDown
                         className={`w-4 h-4 transition-transform duration-300 ${
                           openDropdown === index ? "rotate-180" : ""
@@ -210,12 +214,34 @@ export default function WorkPage() {
                         ))}
                       </ul>
                     </div>
+                    
                   </div>
+
+                  
                 )}
               </div>
             </div>
           ))}
         </div>
+        {projects.length > 8 && (
+  <div className="text-center mt-10">
+  <button
+    onClick={() =>
+      setVisibleCount(visibleCount === 8 ? projects.length : 8)
+    }
+    className="px-5 py-2.5 rounded-full 
+               bg-[#EB6D3A] text-white font-medium text-sm
+               shadow-md hover:shadow-lg
+               hover:bg-orange-500 
+               transition-all duration-300 ease-in-out
+               hover:scale-105"
+  >
+    {visibleCount === 8 ? "Load More" : "Show Less"}
+  </button>
+</div>
+
+)}
+
       </section>
 <div className="relative -mt-1 overflow-hidden">
         <svg
@@ -233,8 +259,8 @@ export default function WorkPage() {
           <rect width="1440" height="10" fill="url(#lineGradient)" />
         </svg>
       </div>
-      {/* ✅ Section: Covid */}
-      <section className="relative bg-gradient-to-r from-orange-100 to-orange-50 py-20">
+      {/*  Section: Covid */}
+      <section id="covid" className="relative bg-gradient-to-r from-orange-100 to-orange-50 py-20">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div className="relative w-full h-72 rounded-xl overflow-hidden shadow-lg">
             <Image
@@ -258,8 +284,8 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* ✅ Section: Flood */}
-      <section className="relative bg-gradient-to-r from-blue-100 to-blue-50 py-20">
+      {/* Section: Flood */}
+      <section id = "flood" className="relative bg-gradient-to-r from-blue-100 to-blue-50 py-20">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div className="relative w-full h-72 rounded-xl overflow-hidden shadow-lg md:order-2">
             <Image
