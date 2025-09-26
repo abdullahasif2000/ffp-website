@@ -33,34 +33,62 @@ export default function StoryPage() {
         </svg>
       </div>
 
-      {/* 🔹 Awards Section */}
-      <section id="awards" className="max-w-6xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold text-center text-[#009688] mb-6">
-          Awards & Recognitions
-        </h2>
-        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">
-          Honoring our contributions towards community service and development.
-        </p>
+      {/* 🏆 Awards Section with Scroll */}
+<section id="awards" className="max-w-7xl mx-auto px-6 py-20">
+  <h2 className="text-4xl font-extrabold text-center bg-gradient-to-r from-[#EB6D3A] to-[#009688] bg-clip-text text-transparent mb-6">
+    Awards & Recognitions
+  </h2>
+  <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12 text-lg">
+    Honoring our contributions towards community service and development.
+  </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {/* Example Award Card */}
-          <div className="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg transition">
-            <Image
-              src="/images/awards/award1.jpg"
-              alt="Award"
-              width={300}
-              height={200}
-              className="mx-auto rounded-lg mb-4"
-            />
-            <h3 className="text-lg font-semibold text-gray-800">
-              Best NGO Award
-            </h3>
-            <p className="text-sm text-gray-600 mt-2">
-              Recognized for outstanding social impact.
-            </p>
-          </div>
-        </div>
-      </section>
+  {/* Scrollable Awards List */}
+  <div className="flex gap-6 overflow-x-auto scrollbar-thin scrollbar-thumb-[#EB6D3A]/70 scrollbar-track-gray-200 pb-4">
+    {[
+      {
+        image: "/images/awards/award1.jpg",
+        title: "Best NGO Award",
+        description: "Recognized for outstanding social impact in Pakistan.",
+      },
+      {
+        image: "/images/awards/award2.jpg",
+        title: "Humanitarian Service Award",
+        description: "Awarded for relief efforts during national emergencies.",
+      },
+      {
+        image: "/images/awards/award3.jpg",
+        title: "Youth Empowerment Award",
+        description: "For empowering youth through education & skills training.",
+      },
+      {
+        image: "/images/awards/award4.jpg",
+        title: "Environmental Leadership",
+        description: "Acknowledged for sustainable plantation initiatives.",
+      },
+      {
+        image: "/images/awards/award5.jpg",
+        title: "Community Builder Award",
+        description: "For strengthening communities through social projects.",
+      },
+    ].map((award, index) => (
+      <div
+        key={index}
+        className="min-w-[260px] bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
+      >
+        <Image
+          src={award.image}
+          alt={award.title}
+          width={300}
+          height={200}
+          className="mx-auto rounded-lg mb-4 h-40 object-cover"
+        />
+        <h3 className="text-lg font-semibold text-gray-800">{award.title}</h3>
+        <p className="text-sm text-gray-600 mt-2">{award.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
       <div className="relative -mt-1 overflow-hidden">
         <svg
           className="w-full h-3 block"
@@ -104,6 +132,17 @@ export default function StoryPage() {
         { name: "Sain Bakhish", year: "Since 2023", image: "/images/heroes/sain bakhish.jpeg" },
         { name: "Faheem Khan", year: "Since 2023", image: "/images/heroes/faheem khan.jpeg" },
         { name: "Amna Akbar", year: "Since 2020", image: "/images/heroes/dumy.jpeg" },
+        { name: "Daniyal Uddin Hashmi", year: "Since 2021", image: "/images/heroes/daniyal uddin hashmi.jpeg" },
+        { name: "Alishba Noor", year: "Since 2023", image: "/images/heroes/alishba noor.jpeg" },
+        { name: "Uniba Malik", year: "Since 2023", image: "/images/heroes/uniba malik.jpeg" },
+        { name: "Afrah Sadia", year: "Since 2023", image: "/images/heroes/afrah sadia.jpeg" },
+        { name: "Rija Batool Hashmi", year: "Since 2021", image: "/images/heroes/rija batool hashmi.jpeg" },
+        { name: "Fatima Batool", year: "Since 2021", image: "/images/heroes/fatima batool.jpg" },  
+        { name: "Tambreen Afzal", year: "Since 2021", image: "/images/heroes/f.jpeg" },  
+        { name: "Syed Umais Nadeem", year: "Since 2023", image: "/images/heroes/syed umais nadeem.jpeg" },  
+        { name: "Alexia Melissa D'souza", year: "Since 2024", image: "/images/heroes/Alexia Melissa D'souza.jpeg" },  
+        { name: "Hadi Mujtaba", year: "Since 2014", image: "/images/heroes/hadi mujtaba.jpeg" },  
+        { name: "Arif Qureshi", year: "Since 2023", image: "/images/heroes/arif qureshi.jpeg" },  
       ].map((hero, index) => (
         <div
           key={index}
