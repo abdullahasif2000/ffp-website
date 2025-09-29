@@ -33,8 +33,11 @@ export default function StoryPage() {
         </svg>
       </div>
 
-      {/* 🏆 Awards Section with Scroll */}
-<section id="awards" className="max-w-7xl mx-auto px-6 py-20">
+      {/* 🏆 Awards Section */}
+<section
+  id="awards"
+  className="max-w-7xl mx-auto px-6 py-20 bg-gradient-to-b from-gray-50 to-white"
+>
   <h2 className="text-4xl font-extrabold text-center bg-gradient-to-r from-[#EB6D3A] to-[#009688] bg-clip-text text-transparent mb-6">
     Awards & Recognitions
   </h2>
@@ -42,52 +45,130 @@ export default function StoryPage() {
     Honoring our contributions towards community service and development.
   </p>
 
-  {/* Scrollable Awards List */}
-  <div className="flex gap-6 overflow-x-auto scrollbar-thin scrollbar-thumb-[#EB6D3A]/70 scrollbar-track-gray-200 pb-4">
+  {/* Scrollable Awards Gallery */}
+  <div className="flex gap-8 overflow-x-auto scrollbar-thin scrollbar-thumb-[#EB6D3A]/70 scrollbar-track-gray-200 pb-6">
     {[
       {
-        image: "/images/awards/award1.jpg",
-        title: "Best NGO Award",
-        description: "Recognized for outstanding social impact in Pakistan.",
+        image: "/images/awards/Hands for help.png",
+        title: "Hands For Help",
+        description:
+          "For collaboration & active participation throughout the course of “Naimat-e-Iftaar”.",
       },
       {
-        image: "/images/awards/award2.jpg",
-        title: "Humanitarian Service Award",
-        description: "Awarded for relief efforts during national emergencies.",
+        image: "/images/awards/Iftar fest.png",
+        title: "Iftar Fest – Friends Of Gaza",
+        description: "In appreciation of esteemed contribution.",
       },
       {
-        image: "/images/awards/award3.jpg",
-        title: "Youth Empowerment Award",
-        description: "For empowering youth through education & skills training.",
+        image: "/images/awards/rotract club support.png",
+        title: "Rotaract Club of Karachi Sunrise",
+        description:
+          "In gratitude and appreciation for unmatched and valuable support to our club FY-2021-22.",
       },
       {
-        image: "/images/awards/award4.jpg",
-        title: "Environmental Leadership",
-        description: "Acknowledged for sustainable plantation initiatives.",
+        image: "/images/awards/sbc legacy award.png",
+        title: "SBC Legacy Awards 2025",
+        description: "Public choice SBC legacy awards Social Worker NGO.",
       },
       {
-        image: "/images/awards/award5.jpg",
-        title: "Community Builder Award",
-        description: "For strengthening communities through social projects.",
+        image: "/images/awards/rising youth.png",
+        title: "Rising Youth",
+        description: "Token of Appreciation.",
+      },
+      {
+        image: "/images/awards/rotract club breast cancer.png",
+        title: "Rotaract Club – Breast Cancer",
+        description:
+          "In recognition of valuable support in organizing breast cancer awareness.",
+      },
+      {
+        image: "/images/awards/gia.png",
+        title: "Gender Interactive Alliance (GIA)",
+        description:
+          "In appreciation of service for transgender community of Pakistan on World AIDS Day 2020.",
+      },
+      {
+        image: "/images/awards/young team leader.png",
+        title: "Young Team Leader Award",
+        description: "Token of Appreciation.",
+      },
+      {
+        image: "/images/awards/5th sawera social worker.png",
+        title: "5th SAWERA Award",
+        description: "On World NGO Day Pakistan 2022.",
+      },
+      {
+        image: "/images/awards/dwa.png",
+        title: "DWA Recognition Award",
+        description:
+          "Commitment towards supporting persons with disabilities in Pakistan, 2022.",
+      },
+      {
+        image: "/images/awards/ibtida safe house.png",
+        title: "IBTIDA Safe House",
+        description:
+          "Presented by Minister for Women Development, Govt. of Sindh.",
+      },
+      {
+        image: "/images/awards/social change campaign.png",
+        title: "Social Change Campaign",
+        description: "By College of Media Sciences, Ziauddin University.",
+      },
+      {
+        image: "/images/awards/1st sawera.png",
+        title: "1st SAWERA Award",
+        description: "On National Award Conference 2022.",
+      },
+      {
+        image: "/images/awards/nasda green energy.png",
+        title: "NASDA Green Energy Limited",
+        description:
+          "Wind Power Project – In appreciation of collaboration & support.",
+      },
+      {
+        image: "/images/awards/together towards tomorrow.png",
+        title: "Together Towards Tomorrow",
+        description:
+          "In recognition of enthusiasm and for making incomparable difference in lives.",
+      },
+      {
+        image: "/images/awards/social impact connect.png",
+        title: "The Social Impact Connect",
+        description: "By IBA Career Development Center.",
+      },
+      {
+        image: "/images/awards/bird of paradise conf 0.1.png",
+        title: "Bird Of Paradise Conf 0.1",
+        description: "On the occasion of International Women’s Day.",
       },
     ].map((award, index) => (
       <div
         key={index}
-        className="min-w-[260px] bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
+        className="min-w-[260px] bg-white/70 backdrop-blur-lg border border-[#EB6D3A]/30 rounded-2xl p-6 text-center shadow-md hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300"
       >
-        <Image
-          src={award.image}
-          alt={award.title}
-          width={300}
-          height={200}
-          className="mx-auto rounded-lg mb-4 h-40 object-cover"
-        />
-        <h3 className="text-lg font-semibold text-gray-800">{award.title}</h3>
+        {/* Award Image (Circular Medal Style) */}
+        <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-[#EB6D3A] to-[#009688] p-[3px]">
+          <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+            <Image
+              src={award.image}
+              alt={award.title}
+              width={100}
+              height={100}
+              className="rounded-full object-contain h-24 w-24"
+            />
+          </div>
+        </div>
+
+        {/* Title & Description */}
+        <h3 className="text-lg font-semibold text-gray-800 mt-4">
+          {award.title}
+        </h3>
         <p className="text-sm text-gray-600 mt-2">{award.description}</p>
       </div>
     ))}
   </div>
 </section>
+
 
       <div className="relative -mt-1 overflow-hidden">
         <svg
@@ -106,73 +187,175 @@ export default function StoryPage() {
         </svg>
       </div>
 
-    {/*  Heroes Section */}
-<section id="heroes" className="bg-gray-50 py-20 relative">
-  <div className="max-w-7xl mx-auto px-6">
-    <h2 className="text-4xl font-extrabold text-center bg-gradient-to-r from-[#EB6D3A] to-[#009688] bg-clip-text text-transparent mb-6">
-      Our Heroes
-    </h2>
-    <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12 text-lg">
-      Meet the incredible people nation-wide who make our mission possible.
-    </p>
+      {/*  Heroes Section */}
+      <section id="heroes" className="bg-gray-50 py-20 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-extrabold text-center bg-gradient-to-r from-[#EB6D3A] to-[#009688] bg-clip-text text-transparent mb-6">
+            Our Heroes
+          </h2>
+          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12 text-lg">
+            Meet the incredible people nation-wide who make our mission
+            possible.
+          </p>
 
-    {/* Scrollable Hero List */}
-    <div className="flex gap-6 overflow-x-auto scrollbar-thin scrollbar-thumb-[#EB6D3A]/70 scrollbar-track-gray-200 pb-4">
-      {[
-        { name: "Abdul Rasheed", year: "Since 2022", image: "/images/heroes/abdul rasheed.jpeg" },
-        { name: "Danish Khilji", year: "Since 2018", image: "/images/heroes/danish khilji.jpeg" },
-        { name: "Imdad Ullah Madni", year: "Since 2022", image: "/images/heroes/imdad ullah madni.jpeg" },
-        { name: "Inam Ul Haq", year: "Since 2023", image: "/images/heroes/inam ul haq.jpeg" },
-        { name: "Iqra Abrar", year: "Since 2024", image: "/images/heroes/iqra abrar.jpeg" },
-        { name: "Muneer Ahmed", year: "Since 2024", image: "/images/heroes/muneer ahmed.jpeg" },
-        { name: "Naveera Tabassum", year: "Since 2022", image: "/images/heroes/naveera tabassum.jpeg" },
-        { name: "Syed Ammar Ashrafi", year: "Since 2021", image: "/images/heroes/syed ammar ashrafi.jpeg" },
-        { name: "Wazir Ahmed", year: "Since 2022", image: "/images/heroes/wazir ahmed.jpeg" },
-        { name: "Haseena Mugheri", year: "Since 2023", image: "/images/heroes/haseena mugheri.jpeg" },
-        { name: "Sain Bakhish", year: "Since 2023", image: "/images/heroes/sain bakhish.jpeg" },
-        { name: "Faheem Khan", year: "Since 2023", image: "/images/heroes/faheem khan.jpeg" },
-        { name: "Amna Akbar", year: "Since 2020", image: "/images/heroes/dumy.jpeg" },
-        { name: "Daniyal Uddin Hashmi", year: "Since 2021", image: "/images/heroes/daniyal uddin hashmi.jpeg" },
-        { name: "Alishba Noor", year: "Since 2023", image: "/images/heroes/alishba noor.jpeg" },
-        { name: "Uniba Malik", year: "Since 2023", image: "/images/heroes/uniba malik.jpeg" },
-        { name: "Afrah Sadia", year: "Since 2023", image: "/images/heroes/afrah sadia.jpeg" },
-        { name: "Rija Batool Hashmi", year: "Since 2021", image: "/images/heroes/rija batool hashmi.jpeg" },
-        { name: "Fatima Batool", year: "Since 2021", image: "/images/heroes/fatima batool.jpg" },  
-        { name: "Tambreen Afzal", year: "Since 2021", image: "/images/heroes/f.jpeg" },  
-        { name: "Syed Umais Nadeem", year: "Since 2023", image: "/images/heroes/syed umais nadeem.jpeg" },  
-        { name: "Alexia Melissa D'souza", year: "Since 2024", image: "/images/heroes/Alexia Melissa D'souza.jpeg" },  
-        { name: "Hadi Mujtaba", year: "Since 2014", image: "/images/heroes/hadi mujtaba.jpeg" },  
-        { name: "Arif Qureshi", year: "Since 2023", image: "/images/heroes/arif qureshi.jpeg" },  
-      ].map((hero, index) => (
-        <div
-          key={index}
-          className="min-w-[220px] bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
-        >
-          {/* Hero Image with Glow Border */}
-          <div className="relative mx-auto w-32 h-32">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#EB6D3A] to-[#009688] p-[3px]">
-              <Image
-                src={hero.image}
-                alt={hero.name}
-                width={200}
-                height={200}
-                className="rounded-full h-full w-full object-cover border-4 border-white"
-              />
-            </div>
+          {/* Scrollable Hero List */}
+          <div className="flex gap-6 overflow-x-auto scrollbar-thin scrollbar-thumb-[#EB6D3A]/70 scrollbar-track-gray-200 pb-4">
+            {[
+              {
+                name: "Abdul Rasheed",
+                year: "Since 2022",
+                image: "/images/heroes/abdul rasheed.jpeg",
+              },
+              {
+                name: "Danish Khilji",
+                year: "Since 2018",
+                image: "/images/heroes/danish khilji.jpeg",
+              },
+              {
+                name: "Imdad Ullah Madni",
+                year: "Since 2022",
+                image: "/images/heroes/imdad ullah madni.jpeg",
+              },
+              {
+                name: "Inam Ul Haq",
+                year: "Since 2023",
+                image: "/images/heroes/inam ul haq.jpeg",
+              },
+              {
+                name: "Iqra Abrar",
+                year: "Since 2024",
+                image: "/images/heroes/iqra abrar.jpeg",
+              },
+              {
+                name: "Muneer Ahmed",
+                year: "Since 2024",
+                image: "/images/heroes/muneer ahmed.jpeg",
+              },
+              {
+                name: "Naveera Tabassum",
+                year: "Since 2022",
+                image: "/images/heroes/naveera tabassum.jpeg",
+              },
+              {
+                name: "Syed Ammar Ashrafi",
+                year: "Since 2021",
+                image: "/images/heroes/syed ammar ashrafi.jpeg",
+              },
+              {
+                name: "Wazir Ahmed",
+                year: "Since 2022",
+                image: "/images/heroes/wazir ahmed.jpeg",
+              },
+              {
+                name: "Haseena Mugheri",
+                year: "Since 2023",
+                image: "/images/heroes/haseena mugheri.jpeg",
+              },
+              {
+                name: "Sain Bakhish",
+                year: "Since 2023",
+                image: "/images/heroes/sain bakhish.jpeg",
+              },
+              {
+                name: "Faheem Khan",
+                year: "Since 2023",
+                image: "/images/heroes/faheem khan.jpeg",
+              },
+              {
+                name: "Amna Akbar",
+                year: "Since 2020",
+                image: "/images/heroes/dumy.jpeg",
+              },
+              {
+                name: "Daniyal Uddin Hashmi",
+                year: "Since 2021",
+                image: "/images/heroes/daniyal uddin hashmi.jpeg",
+              },
+              {
+                name: "Alishba Noor",
+                year: "Since 2023",
+                image: "/images/heroes/alishba noor.jpeg",
+              },
+              {
+                name: "Uniba Malik",
+                year: "Since 2023",
+                image: "/images/heroes/uniba malik.jpeg",
+              },
+              {
+                name: "Afrah Sadia",
+                year: "Since 2023",
+                image: "/images/heroes/afrah sadia.jpeg",
+              },
+              {
+                name: "Rija Batool Hashmi",
+                year: "Since 2021",
+                image: "/images/heroes/rija batool hashmi.jpeg",
+              },
+              {
+                name: "Fatima Batool",
+                year: "Since 2021",
+                image: "/images/heroes/fatima batool.jpg",
+              },
+              {
+                name: "Tambreen Afzal",
+                year: "Since 2021",
+                image: "/images/heroes/f.jpeg",
+              },
+              {
+                name: "Syed Umais Nadeem",
+                year: "Since 2023",
+                image: "/images/heroes/syed umais nadeem.jpeg",
+              },
+              {
+                name: "Alexia Melissa D'souza",
+                year: "Since 2024",
+                image: "/images/heroes/Alexia Melissa D'souza.jpeg",
+              },
+              {
+                name: "Hadi Mujtaba",
+                year: "Since 2014",
+                image: "/images/heroes/hadi mujtaba.jpeg",
+              },
+              {
+                name: "Arif Qureshi",
+                year: "Since 2023",
+                image: "/images/heroes/arif qureshi.jpeg",
+              },
+              {
+                name: "Tambreen Afzal",
+                year: "Since 2019",
+                image: "/images/heroes/tambreen afzal.jpeg",
+              },
+            ].map((hero, index) => (
+              <div
+                key={index}
+                className="min-w-[220px] bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
+              >
+                {/* Hero Image with Glow Border */}
+                <div className="relative mx-auto w-32 h-32">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#EB6D3A] to-[#009688] p-[3px]">
+                    <Image
+                      src={hero.image}
+                      alt={hero.name}
+                      width={200}
+                      height={200}
+                      className="rounded-full h-full w-full object-cover border-4 border-white"
+                    />
+                  </div>
+                </div>
+
+                {/* Hero Info */}
+                <h3 className="text-lg font-semibold text-gray-800 mt-5">
+                  {hero.name}
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">{hero.year}</p>
+              </div>
+            ))}
           </div>
-
-          {/* Hero Info */}
-          <h3 className="text-lg font-semibold text-gray-800 mt-5">
-            {hero.name}
-          </h3>
-          <p className="text-sm text-gray-500 mt-1">{hero.year}</p>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
-<div className="relative -mt-1 overflow-hidden">
+      <div className="relative -mt-1 overflow-hidden">
         <svg
           className="w-full h-3 block"
           viewBox="0 0 1440 10"
@@ -188,7 +371,6 @@ export default function StoryPage() {
           <rect width="1440" height="10" fill="url(#lineGradient)" />
         </svg>
       </div>
-
 
       {/* 🔹 Beneficiary Story */}
       <section id="beneficiary" className="py-20">
@@ -206,10 +388,9 @@ export default function StoryPage() {
               Beneficiary Story
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Meet Fatima, a mother of three, whose life changed after
-              receiving monthly rations and skill training from FFP. Today, she
-              runs her own small business and supports her children’s
-              education.
+              Meet Fatima, a mother of three, whose life changed after receiving
+              monthly rations and skill training from FFP. Today, she runs her
+              own small business and supports her children’s education.
             </p>
           </div>
         </div>
