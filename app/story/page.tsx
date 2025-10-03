@@ -5,17 +5,19 @@ import Image from "next/image";
 export default function StoryPage() {
   return (
     <div className="bg-gray-50">
-      {/* ✅ Hero Banner */}
-      <section className="relative bg-gradient-to-r from-[#009688] to-[#EB6D3A] text-white py-20">
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <h1 className="text-4xl md:text-5xl font-extrabold drop-shadow-lg">
-            Our Story
-          </h1>
-          <p className="mt-4 text-lg font-light text-gray-100">
-            Journey of impact, recognition, and transformation at FFP.
-          </p>
-        </div>
-      </section>
+  {/*  Hero Banner */}
+<section className="relative h-[60vh] w-full">
+  {/* Background Image */}
+  <Image
+    src="/images/logo/16-years.jpg"
+    alt="Our Story"
+    fill
+    priority
+    className="object-cover"
+  />
+</section>
+
+
       <div className="relative -mt-1 overflow-hidden">
         <svg
           className="w-full h-3 block"
@@ -33,7 +35,7 @@ export default function StoryPage() {
         </svg>
       </div>
 
-      {/* 🏆 Awards Section */}
+      {/*  Awards Section */}
 <section
   id="awards"
   className="max-w-7xl mx-auto px-6 py-20 bg-gradient-to-b from-gray-50 to-white"
@@ -141,6 +143,21 @@ export default function StoryPage() {
         title: "Bird Of Paradise Conf 0.1",
         description: "On the occasion of International Women’s Day.",
       },
+      {
+        image: "/images/awards/best humanitarian aid.png",
+        title: "	Best Humanitarian Aid Organization 2020 Award",
+        description: "By AIPAC INSIDER",
+      },
+      {
+        image: "/images/awards/sahil welfare.png",
+        title: "Sahil Welfare Association",
+        description: "Serving coastal communities.",
+      },
+      {
+        image: "/images/awards/the glourious.png",
+        title: "The Glorious Air Def Regt",
+        description: "On the occasion of International Women’s Day.",
+      },
     ].map((award, index) => (
       <div
         key={index}
@@ -168,6 +185,137 @@ export default function StoryPage() {
     ))}
   </div>
 </section>
+
+{/*  Certificates Section */}
+<section
+  id="certificates"
+  className="max-w-7xl mx-auto px-6 py-10 bg-gradient-to-b from-white to-gray-50"
+>
+  <h2 className="text-4xl font-extrabold text-center bg-gradient-to-r from-[#009688] to-[#EB6D3A] bg-clip-text text-transparent mb-6">
+    Certificates
+  </h2>
+  <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12 text-lg">
+    Recognitions and certifications that highlight our commitment to service and excellence.
+  </p>
+
+  {/* Two-row Stylish Scrollable Certificates Gallery */}
+  <div className="grid grid-rows-2 grid-flow-col gap-8 overflow-x-auto pb-6 scrollbar-thin scrollbar-thumb-[#009688]/70 scrollbar-track-gray-200">
+    {[
+      {
+        image: "/images/awards/shabana breast cancer awareness.png",
+        title: "Shabana Memorial Welfare Organization",
+        description:
+          "Awarded for outstanding efforts in organizing community welfare projects.",
+      },
+      {
+        image: "/images/awards/fashion odyssey.jpeg",
+        title: "Fashion Odyssey - Iqra University",
+        description: "Support Sponsor.",
+      },
+      {
+        image: "/images/awards/helping hands for humanity.jpeg",
+        title: "Helping Hands For Humanity",
+        description: "Appreciation Certificate.",
+      },
+      {
+        image: "/images/awards/carna thal 2.0.jpeg",
+        title: "CARN ‘A’ THAL 2.0 Beyond Thalassemia – Carnival Bliss",
+        description:
+          "For collaboration in organizing CARN ‘A’ THAL 2.0 by Hep International.",
+      },
+      {
+        image: "/images/awards/rotract club certificate.jpeg",
+        title: "Rotaract Club of Karachi Sunrise",
+        description:
+          "Certificate of appreciation for unmatched and valuable support to the club.",
+      },
+      {
+        image: "/images/awards/shabana certificate.png",
+        title: "Shabana Memorial Welfare",
+        description: "Appreciation on the occasion of FFP Anniversary.",
+      },
+      {
+        image: "/images/awards/book donation drive.jpeg",
+        title:
+          "Certificate Of Cooperation – Book Donation Drive (FFP & Sirat-ul-Jannah)",
+        description: "",
+      },
+      {
+        image: "/images/awards/social awareness campaign edhi.jpeg",
+        title:
+          "Certificate Of Cooperation – Social Awareness Campaign (FFP & Edhi Foundation)",
+        description: "",
+      },
+      {
+        image: "/images/awards/free medical camp baldia.jpeg",
+        title: "Rotaract Club of Karachi",
+        description:
+          "Appreciation for valuable service in free medical camp Baldia Town, Karachi.",
+      },
+      {
+        image: "/images/awards/dental awareness camp.jpeg",
+        title:
+          "Certificate Of Cooperation – Dental Awareness Camp (FFP & Meiji)",
+        description: "",
+      },
+      {
+        image: "/images/awards/social awareness campaign darulsukun.jpeg",
+        title:
+          "Certificate Of Cooperation – Social Awareness Campaign (FFP & Dar-ul-Sukun)",
+        description: "",
+      },
+      {
+        image: "/images/awards/5th sawera certificate.png",
+        title:
+          "Certificate of Appreciation – 5th SAWERA Award on World NGO Day 2022",
+        description: "",
+      },
+      {
+        image: "/images/awards/education dept ffp.jpeg",
+        title:
+          "Certificate Of Cooperation – Education Department FFP (FFP & Shed Foundation)",
+        description: "",
+      },
+      {
+        image: "/images/awards/income support program.jpeg",
+        title:
+          "Certificate Of Cooperation – Income Support Program (FFP & Pakistan Speaks)",
+        description: "",
+      },
+    ].map((certificate, index) => (
+      <div
+        key={index}
+        className="w-72 bg-white/80 backdrop-blur-md rounded-2xl p-5 text-center
+                   shadow-md hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105
+                   transition-all duration-300 border border-gray-200 relative"
+      >
+        {/* Top Gradient Bar */}
+        <div className="absolute top-0 left-0 w-full h-1.5 rounded-t-2xl bg-gradient-to-r from-[#009688] to-[#EB6D3A]" />
+
+        {/* Certificate Image */}
+        <div className="w-full h-48 flex items-center justify-center overflow-hidden rounded-lg bg-gray-50 shadow-inner">
+          <Image
+            src={certificate.image}
+            alt={certificate.title}
+            width={300}
+            height={220}
+            className="object-contain h-full w-auto"
+          />
+        </div>
+
+        {/* Title & Description */}
+        <h3 className="text-base font-semibold text-gray-800 mt-4">
+          {certificate.title}
+        </h3>
+        <p className="text-xs text-gray-600 mt-2">{certificate.description}</p>
+
+        {/* Bottom Gradient Bar */}
+        <div className="absolute bottom-0 left-0 w-full h-1.5 rounded-b-2xl bg-gradient-to-r from-[#EB6D3A] to-[#009688]" />
+      </div>
+    ))}
+  </div>
+</section>
+
 
 
       <div className="relative -mt-1 overflow-hidden">
