@@ -1,8 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
-
-
+import Footer from "../components/Footer"; // ✅ Add Footer import
 
 export const metadata: Metadata = {
   title: "FFP Website",
@@ -17,9 +16,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="overflow-x-hidden">
-        {/* Top bar + Logo are inside Navbar */}
+        {/* 🔹 Navbar at top */}
         <Navbar />
-        {children}
+
+        {/* 🔹 Page content */}
+        <main>{children}</main>
+
+        {/* 🔹 Footer added globally */}
+        <Footer />
       </body>
     </html>
   );

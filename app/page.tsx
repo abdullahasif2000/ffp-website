@@ -336,7 +336,7 @@ export default function HomePage() {
     <img
       src="/images/logo/logo-png.png"
       alt="Foundation Logo"
-      className="w-40 md:w-50 drop-shadow-lg"
+      className="w-40 md:w-52 drop-shadow-lg"
     />
 
     {/* Text */}
@@ -344,21 +344,34 @@ export default function HomePage() {
       <h2 className="text-2xl md:text-3xl font-extrabold text-[#009688] mb-3">
         Our Vision
       </h2>
-      <div className="w-20 h-1 bg-gradient-to-r from-[#009688] to-[#EB6D3A] mb-4 rounded-full mx-auto md:mx-0"></div>
+
+      {/* Gradient Bar */}
+      <div className="w-24 h-1 bg-gradient-to-r from-[#009688] to-[#EB6D3A] mb-4 rounded-full mx-auto md:mx-0"></div>
+
+      {/* Paragraph */}
       <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-2xl">
-        We envision a world where every individual has access to{" "}
-        <span className="font-semibold text-[#EB6D3A]">basic needs, education, and  {""}</span>  
-         for a brighter and more inclusive future.
+        Empowering people for a green, sustainable, and happy life.
+        <br /><br />
+        FFPs mission is to alleviate poverty in Pakistan by advancing 
+        <span className="font-semibold text-[#EB6D3A]"> sustainable livelihood opportunities </span>
+        and enhancing the resilience of vulnerable communities. We are committed to supporting 
+        underprivileged families through initiatives that improve 
+        <span className="font-semibold text-[#009688]"> income generation, education, and overall well-being. </span>
+        <br /><br />
+        By fostering <span className="font-semibold text-[#EB6D3A]">self-reliance</span> and promoting 
+        <span className="font-semibold text-[#009688]"> community-driven development,</span> we aim to contribute 
+        to a more equitable, sustainable, and prosperous society.
       </p>
     </div>
   </div>
 </div>
 
 
+
     {/* Mission */}
     <div>
       <h2 className="text-3xl md:text-4xl font-extrabold text-[#009688] text-center mb-6">
-        Our Mission
+        Scope Of Our Mission
       </h2>
       <div className="w-24 h-1 bg-gradient-to-r from-[#009688] to-[#EB6D3A] mb-10 rounded-full mx-auto"></div>
 
@@ -593,65 +606,7 @@ export default function HomePage() {
           <rect width="1440" height="10" fill="url(#lineGradient)" />
         </svg>
       </div>
-
-{/* Footer Section */}
-<footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-gray-300 py-14 px-6">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-
-    {/* Left - Logo & Info */}
-    <div>
-      <img
-        src="/images/logo/ffp-logo.png"
-        alt="FFP Logo"
-        className="w-70 mb-6"
-      />
-      <p className="text-sm mb-2">📍 Head Office: 250-C, PECHS Block-06, Karachi, Pakistan</p>
-      <p className="text-sm mb-2">📞 +92 300 1234567</p>
-      <p className="text-sm">✉️ contact@ffp.org</p>
-    </div>
-
-    {/* Middle - Quick Links */}
-    <div>
-      <h3 className="text-lg font-semibold text-white mb-5">Quick Links</h3>
-      <ul className="space-y-2 text-sm">
-        <li><a href="#about" className="hover:text-[#EB6D3A] transition">About Us</a></li>
-        <li><a href="#mission" className="hover:text-[#EB6D3A] transition">Mission</a></li>
-        <li><a href="#vision" className="hover:text-[#EB6D3A] transition">Vision</a></li>
-        <li><a href="#contact" className="hover:text-[#EB6D3A] transition">Contact</a></li>
-      </ul>
-    </div>
-
-    {/* Right - Social Media */}
-    <div>
-      {/* <h3 className="text-lg font-semibold text-white mb-5">Follow Us</h3> */}
-      <div className="flex space-x-5">
-        <a href="https://facebook.com" target="_blank" className="hover:text-[#1877F2] text-3xl transition-transform transform hover:scale-110">
-          <i className="fab fa-facebook"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" className="hover:text-[#E1306C] text-3xl transition-transform transform hover:scale-110">
-          <i className="fab fa-instagram"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" className="hover:text-[#0A66C2] text-3xl transition-transform transform hover:scale-110">
-          <i className="fab fa-linkedin"></i>
-        </a>
-        <a href="https://youtube.com" target="_blank" className="hover:text-[#FF0000] text-3xl transition-transform transform hover:scale-110">
-          <i className="fab fa-youtube"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" className="hover:text-[#1DA1F2] text-3xl transition-transform transform hover:scale-110">
-          <i className="fab fa-twitter"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  {/* Bottom Bar */}
-  <div className="mt-12 text-center text-xs text-gray-400 border-t border-gray-700 pt-4">
-    © {new Date().getFullYear()} <span className="text-[#EB6D3A] font-semibold">Foundation Fighting Poverty</span>. All rights reserved.
-  </div>
-</footer>
-
-
-
+      
     </div>
   );
 }

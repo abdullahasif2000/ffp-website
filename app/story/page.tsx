@@ -198,7 +198,7 @@ export default function StoryPage() {
     Recognitions and certifications that highlight our commitment to service and excellence.
   </p>
 
-  {/* Two-row Stylish Scrollable Certificates Gallery */}
+  {/* Certificates Gallery */}
   <div className="grid grid-rows-2 grid-flow-col gap-8 overflow-x-auto pb-6 scrollbar-thin scrollbar-thumb-[#009688]/70 scrollbar-track-gray-200">
     {[
       {
