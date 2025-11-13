@@ -77,13 +77,7 @@ export default function Footer() {
             >
               <i className="fab fa-youtube"></i>
             </a>
-            <a
-              href="twitter.com/ffpforyou"
-              target="_blank"
-              className="hover:text-[#1DA1F2] text-3xl transition-transform transform hover:scale-110"
-            >
-              <i className="fab fa-twitter"></i>
-            </a>
+          
           </div>
         </div>
       </div>
