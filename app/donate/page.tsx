@@ -13,7 +13,15 @@ import {
   FaGlobeAmericas,
 } from "react-icons/fa";
 
-const DocumentModal = ({ open, onClose, type, src, title }) => {
+interface DocumentModalProps {
+  open: boolean;
+  onClose: () => void;
+  type: string;
+  src: string;
+  title: string;
+}
+
+const DocumentModal = ({ open, onClose, type, src, title }: DocumentModalProps) => {
   if (!open) return null;
 
   return (
@@ -351,7 +359,7 @@ export default function DonatePage() {
           <div className="p-6 bg-white rounded-xl shadow-md border flex flex-col items-center gap-3">
             <FaGlobeAmericas className="text-3xl text-[#EB6D3A]" />
             <p className="mt-1 text-gray-700 font-semibold text-sm">Transparent Reporting</p>
-            <p className="text-xs text-gray-400">Audited & Shariah Compalinced</p>
+            <p className="text-xs text-gray-400">Audited & Shariah Complianced</p>
           </div>
         </div>
       </section>
@@ -640,7 +648,7 @@ export default function DonatePage() {
       setDoc({
         open: true,
         title: "Audit Reports",
-        src: "/documents/audit.pdf",
+        src: "/documents/FFP Audit Report 2023-2024.pdf",
         type: "pdf",
       })
     }
@@ -658,7 +666,7 @@ export default function DonatePage() {
       setDoc({
         open: true,
         title: "Corporate Profile",
-        src: "/documents/profile.pdf",
+        src: "/documents/FFP Corporate profile 2024.pdf",
         type: "pdf",
       })
     }
