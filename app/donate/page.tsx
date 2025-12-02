@@ -169,12 +169,6 @@ export default function DonatePage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
             #You Donate, We Serve
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-black max-w-4xl">
-            Foundation Fighting Poverty Reg # DGSW(S))2123 has been serving
-            humanity for over 16 years across 40+ cities in Pakistan — supporting
-            education, ration drives, medical camps, women empowerment, and
-            disaster relief programs.
-          </p>
 
           <div className="mt-6 flex gap-4">
             <a
@@ -296,15 +290,7 @@ export default function DonatePage() {
         </div>
       </section>
 
-      {/* WAVE DIVIDER (inverted) */}
-      <div className="w-full overflow-hidden leading-none">
-        <svg viewBox="0 0 1440 100" className="w-full h-20">
-          <path
-            d="M0,0 C300,100 600,0 900,50 C1200,100 1440,20 1440,20 L1440,100 L0,100 Z"
-            className="fill-gray-100"
-          />
-        </svg>
-      </div>
+
 
       {/*  COUNTERS */}
 <section
@@ -363,16 +349,6 @@ export default function DonatePage() {
           </div>
         </div>
       </section>
-
-      {/* WAVE DIVIDER */}
-      <div className="w-full overflow-hidden leading-none -mt-1">
-        <svg viewBox="0 0 1440 100" className="w-full h-20">
-          <path
-            d="M0,0 C300,100 600,0 900,50 C1200,100 1440,20 1440,20 L1440,100 L0,100 Z"
-            className="fill-white"
-          />
-        </svg>
-      </div>
 
       {/*  MAIN SECTION */}
       <div className="py-16 px-6">
@@ -475,208 +451,268 @@ export default function DonatePage() {
 </div>
 
 
-        {/* OTHER WAYS */}
-        <h2 className="text-3xl font-bold text-[#009688] mt-20 mb-6 text-center">
-          Other Ways to Donate
-        </h2>
+       {/* OTHER WAYS */}
+<section className="mt-24">
+  <h2 className="text-4xl font-bold text-[#009688] text-center mb-12 tracking-tight">
+    Other Ways to Donate
+  </h2>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Commodity */}
-          <div className="bg-white shadow-lg rounded-2xl p-7 border-t-4 border-[#009688] hover:shadow-xl transition">
-            <h3 className="text-xl font-bold text-center text-gray-800">
-              Commodity / Material
-            </h3>
-            <p className="text-gray-600 text-center mt-2">
-              Ration, clothes, books, hygiene kits & relief goods.
-            </p>
-            <div className="mt-4 text-gray-700 text-sm border-t pt-4 text-center">
-              <p>
-                <b>Drop-off:</b> C-250, PECHS Block 6, Karachi
-              </p>
-              <p>
-                <b>WhatsApp:</b> 0337-8028418
-              </p>
-              <p>
-                <b>Landline:</b> 0213-4320544
-              </p>
-            </div>
-          </div>
+  {/* Cards Grid */}
+  <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          {/* Cash */}
-          <div className="bg-white shadow-lg rounded-2xl p-7 border-t-4 border-[#EB6D3A] hover:shadow-xl transition">
-            <h3 className="text-xl font-bold text-center text-gray-800">
-              Cash Donation
-            </h3>
-            <p className="text-gray-600 text-center mt-2">
-              Submit cash personally at our office.
-            </p>
-            <div className="mt-4 text-gray-700 text-sm border-t pt-4 text-center">
-              <p>
-                <b>Address:</b> C-250, PECHS Block 6
-              </p>
-              <p>
-                <b>Timings:</b> 10 AM – 6 PM
-              </p>
-              <p>
-                <b>WhatsApp:</b> 0337-8028418
-              </p>
-            </div>
-          </div>
-
-          {/* Donation Boxes */}
-          <div className="bg-white shadow-lg rounded-2xl p-7 border-t-4 border-[#009688] hover:shadow-xl transition">
-            <h3 className="text-xl font-bold text-center text-gray-800">
-              Donation Boxes
-            </h3>
-            <p className="text-gray-600 text-center mt-2">
-              Keep donation box at home, shop, office.
-            </p>
-            <div className="mt-4 text-gray-700 text-sm border-t pt-4 text-center">
-              <p>
-                <b>Pickup:</b> Available in Karachi
-              </p>
-              <p>
-                <b>WhatsApp:</b> 0337-8028418
-              </p>
-              <p>
-                <b>Landline:</b> 0213-4320544
-              </p>
-            </div>
-          </div>
+    {[
+      {
+        title: "Commodity / Material",
+        desc: "Ration, clothes, books, hygiene kits & relief goods.",
+        color: "#009688",
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor"
+            className="w-8 h-8">
+            <path strokeLinecap="round" strokeLinejoin="round"
+              d="M3 3h18M3 3v18m0-18l7.5 9m10.5-9L12 12m0 0l7.5 9M12 12l-7.5 9" />
+          </svg>
+        ),
+      },
+      {
+        title: "Cash Donation",
+        desc: "Submit cash personally at our office.",
+        color: "#EB6D3A",
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor"
+            className="w-8 h-8">
+            <path strokeLinecap="round" strokeLinejoin="round"
+              d="M12 6v12m0 0l-3-3m3 3l3-3M6 9h12" />
+          </svg>
+        ),
+      },
+      {
+        title: "Donation Boxes",
+        desc: "Keep donation box at home, shop, office.",
+        color: "#009688",
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor"
+            className="w-8 h-8">
+            <path strokeLinecap="round" strokeLinejoin="round"
+              d="M3 7.5l9-4.5 9 4.5M4.5 9v9l7.5 4.5 7.5-4.5V9" />
+          </svg>
+        ),
+      },
+    ].map((item, index) => (
+      <div
+        key={index}
+        className="
+          p-8 rounded-2xl bg-white/70 backdrop-blur-md
+          shadow-lg border border-gray-100
+          hover:shadow-2xl transition-all duration-300 hover:scale-[1.04]
+          flex flex-col items-center text-center
+        "
+      >
+        {/* Icon bubble */}
+        <div
+          className="h-16 w-16 rounded-2xl flex items-center justify-center shadow-md mb-5"
+          style={{ backgroundColor: `${item.color}15`, color: item.color }}
+        >
+          {item.icon}
         </div>
 
-        {/*  PROFESSIONAL IMPORTANT NOTE SECTION */}
-        <div className="max-w-5xl mx-auto mt-20 bg-white border rounded-2xl shadow-md p-8">
-          <h3 className="text-2xl font-bold text-[#EB6D3A] text-center mb-6">
-            Important Donation Guidelines
-          </h3>
+        {/* Title */}
+        <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
 
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-[#EB6D3A] rounded-full mt-2"></div>
-              <p className="text-gray-700 text-sm">
-                Donations must only be made to the official Foundation Fighting
-                Poverty bank accounts.
-              </p>
-            </div>
+        {/* Description */}
+        <p className="text-gray-600 mt-2">{item.desc}</p>
+      </div>
+    ))}
+  </div>
 
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-[#009688] rounded-full mt-2"></div>
-              <p className="text-gray-700 text-sm">
-                After transferring funds, please share the transaction
-                screenshot on WhatsApp for verification.
-              </p>
-            </div>
+ {/* CONTACT + GUIDELINES SIDE BY SIDE */}
+<section className="max-w-7xl mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-[#EB6D3A] rounded-full mt-2"></div>
-              <p className="text-gray-700 text-sm">
-                Required details after donation: Name, Contact, Amount,
-                Zakat/Charity, and Purpose of Donation.
-              </p>
-            </div>
+  {/* LEFT — General Contact Info */}
+  <div className="
+    bg-white/80 backdrop-blur-md 
+    rounded-2xl shadow-xl border border-gray-200 
+    p-6 relative
+  ">
+    {/* Top line */}
+    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-[#009688] rounded-full opacity-80"></div>
 
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-[#009688] rounded-full mt-2"></div>
-              <p className="text-gray-700 text-sm">
-                Doorstep donation pickup service is available within Karachi
-                upon request.
-              </p>
-            </div>
-          </div>
+    <h3 className="text-xl font-bold text-[#009688] mb-4 text-center">
+      General Contact & Drop-off Info
+    </h3>
 
-          <p className="text-center text-gray-600 text-xs mt-6">
-            These steps ensure transparency, accurate record-keeping, and
-            issuance of receipts.
-          </p>
-        </div>
+    <div className="space-y-2.5 text-gray-700 text-base">
+      <p><span className="font-semibold text-[#009688]">Address:</span> C-250, PECHS Block 6, Karachi</p>
+      <p><span className="font-semibold text-[#009688]">WhatsApp:</span> 0337-8028418</p>
+      <p><span className="font-semibold text-[#009688]">Landline:</span> 0213-4320544</p>
+      <p><span className="font-semibold text-[#009688]">Timings:</span> 10 AM – 6 PM</p>
+      <p><span className="font-semibold text-[#009688]">Pickup:</span> Available in Karachi</p>
+    </div>
+  </div>
 
-       {/* DOCUMENTS */}
-<h2
-  id="documents"
-  className="text-3xl font-bold text-[#009688] mt-20 mb-6 text-center"
->
-  Legal & Verification Documents
-</h2>
+  {/* RIGHT — Donation Guidelines */}
+  <div className="
+    bg-white/80 backdrop-blur-md 
+    rounded-2xl shadow-xl border border-gray-200 
+    p-6 relative
+  ">
+    {/* Top line */}
+    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-[#EB6D3A] rounded-full opacity-80"></div>
 
-<p className="text-center text-gray-700 max-w-2xl mx-auto mb-10">
-  FFP is a <b>registered, audited, Shariah-compliant non-profit organization</b>.
-  These documents are publicly available for complete donor transparency.
-</p>
+    <h3 className="text-xl font-bold text-[#EB6D3A] mb-4 text-center">
+      Important Donation Guidelines
+    </h3>
 
-<div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-  {/* Document 1 - Registration Certificate */}
-  <div
-    className="bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[#009688] cursor-pointer hover:shadow-xl transition"
-    onClick={() =>
-      setDoc({
-        open: true,
+    <div className="space-y-3 text-gray-700 text-base">
+      <div className="flex items-start gap-2">
+        <div className="w-2 h-2 bg-[#EB6D3A] rounded-full mt-1.5"></div>
+        <p>Donations must only be made to <span className="font-semibold text-[#EB6D3A]">official FFP accounts</span>.</p>
+      </div>
+
+      <div className="flex items-start gap-2">
+        <div className="w-2 h-2 bg-[#009688] rounded-full mt-1.5"></div>
+        <p>Share the <span className="font-semibold text-[#EB6D3A]">transaction screenshot</span> on WhatsApp.</p>
+      </div>
+
+      <div className="flex items-start gap-2">
+        <div className="w-2 h-2 bg-[#EB6D3A] rounded-full mt-1.5"></div>
+        <p>Provide details: <span className="font-semibold text-[#EB6D3A]">Name, Contact, Amount, Zakat/Charity, Purpose</span>.</p>
+      </div>
+
+      <div className="flex items-start gap-2">
+        <div className="w-2 h-2 bg-[#009688] rounded-full mt-1.5"></div>
+        <p>Doorstep pickup available within <span className="font-semibold text-[#EB6D3A]">Karachi</span>.</p>
+      </div>
+    </div>
+
+    <p className="text-center text-gray-600 text-xs mt-4">
+      These steps ensure transparency and proper record-keeping.
+    </p>
+  </div>
+
+</section>
+
+</section>
+
+{/* DOCUMENTS */}
+<section className="mt-24">
+  <h2
+    id="documents"
+    className="text-4xl font-bold text-[#009688] text-center mb-4 tracking-tight"
+  >
+    Legal & Verification Documents
+  </h2>
+
+  <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12 text-lg">
+    FFP is a <b>registered, audited, Shariah-compliant non-profit organization</b>.
+    These documents are publicly available for donor transparency.
+  </p>
+
+  <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {[
+      {
         title: "Registration Certificate",
+        desc: "Verified government-issued NGO registration.",
         src: "/images/donate/ffp-reg-certificate.jpeg",
+        color: "from-[#009688]/20 to-white",
         type: "image",
-      })
-    }
-  >
-    <h3 className="text-xl font-semibold text-gray-800">Registration Certificate</h3>
-    <p className="text-gray-600 mt-2">
-      Verified government-issued NGO registration.
-    </p>
-  </div>
-
-  {/* Document 2 - Shariah Compliance Certificate */}
-  <div
-    className="bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[#EB6D3A] cursor-pointer hover:shadow-xl transition"
-    onClick={() =>
-      setDoc({
-        open: true,
-        title: "Shariah Compliance Certificate",
+      },
+      {
+        title: "Shariah Compliance",
+        desc: "Certified Shariah-compliant for Zakat & charity handling.",
         src: "/images/donate/ffp-shariah-certificate.jpeg",
+        color: "from-[#EB6D3A]/20 to-white",
         type: "image",
-      })
-    }
-  >
-    <h3 className="text-xl font-semibold text-gray-800">Shariah Compliance</h3>
-    <p className="text-gray-600 mt-2">
-      Certified Shariah-compliant for Zakat & charity handling.
-    </p>
-  </div>
-
-  {/* Document 3 - Audit Reports */}
-  <div
-    className="bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[#009688] cursor-pointer hover:shadow-xl transition"
-    onClick={() =>
-      setDoc({
-        open: true,
+      },
+      {
         title: "Audit Reports",
+        desc: "Annual audit reports ensuring financial transparency.",
         src: "/documents/FFP Audit Report 2023-2024.pdf",
+        color: "from-[#009688]/20 to-white",
         type: "pdf",
-      })
-    }
-  >
-    <h3 className="text-xl font-semibold text-gray-800">Audit Reports</h3>
-    <p className="text-gray-600 mt-2">
-      Annual audit reports ensuring financial transparency.
-    </p>
-  </div>
-
-  {/* Document 4 - Corporate Profile */}
-  <div
-    className="bg-white shadow-lg rounded-2xl p-6 border-t-4 border-[#EB6D3A] cursor-pointer hover:shadow-xl transition"
-    onClick={() =>
-      setDoc({
-        open: true,
+      },
+      {
         title: "Corporate Profile",
-        src: "/documents/FFP Corporate profile 2024.pdf",
+        desc: "Overview of FFP’s mission, programs & impact.",
+        src: "/documents/FFP Corporate Profile-2024.pdf",
+        color: "from-[#EB6D3A]/20 to-white",
         type: "pdf",
-      })
-    }
-  >
-    <h3 className="text-xl font-semibold text-gray-800">Corporate Profile</h3>
-    <p className="text-gray-600 mt-2">
-      Overview of FFP’s mission, programs & impact.
-    </p>
+      },
+    ].map((doc, index) => (
+      <div
+        key={index}
+        onClick={() =>
+          setDoc({
+            open: true,
+            title: doc.title,
+            src: doc.src,
+            type: doc.type,
+          })
+        }
+        className={`
+          group p-6 cursor-pointer rounded-2xl border bg-gradient-to-br ${doc.color}
+          hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]
+          transition-all duration-300 
+          backdrop-blur-sm border-gray-200 hover:border-transparent
+          hover:scale-[1.03]
+        `}
+      >
+        {/* Icon */}
+        <div className="mb-4 flex items-center justify-center">
+          <div className="h-14 w-14 rounded-xl bg-white shadow-md flex items-center justify-center group-hover:scale-110 transition">
+            {doc.type === "pdf" ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.8}
+                stroke="currentColor"
+                className="w-8 h-8 text-red-500"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19.5 14.25v-7.5a2.25 2.25 0 00-2.25-2.25h-10.5A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25h6.75m2.25-5.25l3 3m0 0l-3 3m3-3h-7.5"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.8}
+                stroke="currentColor"
+                className="w-8 h-8 text-[#009688]"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 3v18m0 0h16.5m-16.5 0l4.5-6m12 6l-4.5-6m0 0l4.5-6m-4.5 6H8.25"
+                />
+              </svg>
+            )}
+          </div>
+        </div>
+
+        {/* Title */}
+        <h3 className="text-xl font-semibold text-gray-900 text-center">
+          {doc.title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-600 text-center mt-2">{doc.desc}</p>
+
+        {/* Hover Indicator */}
+        <div className="mt-5 text-center text-sm font-medium text-[#009688] opacity-0 group-hover:opacity-100 transition">
+          View Document →
+        </div>
+      </div>
+    ))}
   </div>
-</div>
+</section>
+
 
 {/* MODAL COMPONENT */}
 <DocumentModal
@@ -689,34 +725,42 @@ export default function DonatePage() {
 
 
 
-        {/* TESTIMONIALS */}
-        <h2 className="text-3xl font-bold text-[#EB6D3A] mt-20 mb-6 text-center">
-          What People Say
-        </h2>
+      {/* FULL-WIDTH BREAKOUT WRAPPER */}
+<div className="w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw]">
+  
+  {/* TESTIMONIALS SECTION */}
+  <div
+    className="relative py-24 bg-fixed bg-center bg-cover bg-no-repeat"
+    style={{ backgroundImage: "url('/images/donate/testimonial bg.jpg')" }}
+  >
+    {/* Light overlay */}
+    <div className="absolute inset-0 bg-white/10"></div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            "FFP distributes ration and supports needy families regularly.",
-            "Highly transparent and trustworthy organization.",
-            "They helped us during floods when no one else was willing.",
-          ].map((text, i) => (
-            <div
-              key={i}
-              className="bg-white shadow-md rounded-xl p-6 border border-gray-200 hover:shadow-xl transition"
-            >
-              <FaQuoteLeft className="text-[#EB6D3A] text-3xl mb-2" />
-              <p className="text-gray-700 text-sm leading-relaxed">{text}</p>
-            </div>
-          ))}
-        </div>
+    {/* Content */}
+    <div className="relative z-10">
+      <h2 className="text-3xl font-bold text-[#EB6D3A] mb-8 text-center">
+        What People Say
+      </h2>
 
-        {/* Footer Contact */}
-        <div className="text-center mt-16">
-          <p className="text-gray-700 text-lg">
-            For international donations & pickup service:
-          </p>
-          <p className="text-[#009688] font-bold text-xl">contact@ffppk.org</p>
-        </div>
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          "FFP distributes ration and supports needy families regularly.",
+          "Highly transparent and trustworthy organization.",
+          "They helped us during floods when no one else was willing.",
+        ].map((text, i) => (
+          <div
+            key={i}
+            className="bg-white shadow-md rounded-xl p-6 border border-gray-200 hover:shadow-xl transition"
+          >
+            <FaQuoteLeft className="text-[#EB6D3A] text-3xl mb-2" />
+            <p className="text-gray-700 text-sm leading-relaxed">{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+</div>
       </div>
 
       {/* FLOATING DONATE BUTTON */}
