@@ -191,36 +191,38 @@ export default function PartnersMedia() {
 
       {/* BODY CONTENT */}
       <div className="relative max-w-7xl mx-auto px-6 py-20">
-       {/* OUR PARTNERS SECTION */}
-<div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-24">
-  <section className="
-    relative overflow-hidden
-    bg-gradient-to-br from-[#fff5ef] via-[#fff9f5] to-[#ffffff]
-    py-20
-  ">
-
+      {/* OUR PARTNERS SECTION */}
+<div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+  <section
+    className="
+      relative overflow-hidden
+      bg-gradient-to-br from-[#ffe9dc] via-[#fff1ea] to-[#fff7f3]
+      py-24
+    "
+  >
     {/* subtle dot pattern */}
-    <div className="
-      absolute inset-0
-      bg-[radial-gradient(#eb6d3a22_1px,transparent_1px)]
-      bg-[size:20px_20px]
-      pointer-events-none
-    "></div>
+    <div
+      className="
+        absolute inset-0
+        bg-[radial-gradient(#eb6d3a2a_1px,transparent_1px)]
+        bg-[size:20px_20px]
+        pointer-events-none
+      "
+    ></div>
 
     {/* constrained content */}
     <div className="relative max-w-7xl mx-auto px-6">
-
       <h2 className="text-3xl font-bold text-gray-900 mb-1">
         Our Partners
       </h2>
 
       <div className="w-16 h-1 bg-[#EB6D3A] mb-6 rounded-full"></div>
 
-      <p className="text-gray-600 mb-12">
+      <p className="text-gray-700 mb-12">
         Trusted by 50+ leading companies & institutions.
       </p>
 
-      <div className="space-y-10">
+      <div className="space-y-12">
         {partnerRows.map((row, rowIndex) => (
           <Swiper
             key={rowIndex}
@@ -235,16 +237,20 @@ export default function PartnersMedia() {
               768: { slidesPerView: 7 },
               1024: { slidesPerView: 10 },
             }}
-            spaceBetween={24}
+            spaceBetween={26}
           >
             {row.map((src, i) => (
               <SwiperSlide key={i}>
-                <div className="
-                  bg-white p-4 rounded-xl border shadow-sm
-                  hover:shadow-lg hover:-translate-y-1
-                  hover:ring-1 hover:ring-[#EB6D3A]/20
-                  transition duration-300 flex justify-center
-                ">
+                <div
+                  className="
+                    bg-white/95 p-5 rounded-xl border
+                    shadow-sm
+                    hover:shadow-lg hover:-translate-y-1
+                    hover:ring-1 hover:ring-[#EB6D3A]/25
+                    transition duration-300
+                    flex justify-center
+                  "
+                >
                   <Image
                     src={src}
                     alt="Partner Logo"
@@ -258,44 +264,56 @@ export default function PartnersMedia() {
           </Swiper>
         ))}
       </div>
-
     </div>
   </section>
 </div>
 
 
 
-        {/* MEDIA PARTNERS SECTION */}
-<div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-24">
-  <section className="
-    relative overflow-hidden
-    bg-gradient-to-br from-[#f3f8ff] via-[#f8fbff] to-[#ffffff]
-    py-20
-  ">
 
-    {/* grid pattern */}
-    <div className="
-      absolute inset-0
-      bg-[linear-gradient(90deg,#00000008_1px,transparent_1px),
-          linear-gradient(#00000008_1px,transparent_1px)]
-      bg-[size:26px_26px]
-      pointer-events-none
-    "></div>
+       {/* MEDIA PARTNERS SECTION */}
+<div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-28">
+  <section
+    className="
+      relative overflow-hidden
+      bg-gradient-to-br from-[#e6efff] via-[#edf4ff] to-[#f6f9ff]
+      py-24
+    "
+  >
+    {/* soft grid pattern */}
+    <div
+      className="
+        absolute inset-0
+        bg-[linear-gradient(90deg,#0000000f_1px,transparent_1px),
+            linear-gradient(#0000000f_1px,transparent_1px)]
+        bg-[size:28px_28px]
+        pointer-events-none
+      "
+    ></div>
+
+    {/* subtle dot overlay */}
+    <div
+      className="
+        absolute inset-0
+        bg-[radial-gradient(#eb6d3a22_1px,transparent_1px)]
+        bg-[size:20px_20px]
+        pointer-events-none
+      "
+    ></div>
 
     {/* constrained content */}
     <div className="relative max-w-7xl mx-auto px-6">
-
       <h2 className="text-3xl font-bold text-gray-900 mb-1">
         Media Partners
       </h2>
 
       <div className="w-16 h-1 bg-[#EB6D3A] mb-6 rounded-full"></div>
 
-      <p className="text-gray-600 mb-12">
+      <p className="text-gray-700 mb-12">
         Media houses amplifying our mission nationwide.
       </p>
 
-      <div className="space-y-10">
+      <div className="space-y-12">
         {mediaRows.map((row, rowIndex) => (
           <Swiper
             key={rowIndex}
@@ -310,16 +328,20 @@ export default function PartnersMedia() {
               768: { slidesPerView: 7 },
               1024: { slidesPerView: 10 },
             }}
-            spaceBetween={24}
+            spaceBetween={26}
           >
             {row.map((src, i) => (
               <SwiperSlide key={i}>
-                <div className="
-                  bg-white p-4 rounded-xl border shadow-sm
-                  hover:shadow-lg hover:-translate-y-1
-                  hover:ring-1 hover:ring-[#EB6D3A]/20
-                  transition duration-300 flex justify-center
-                ">
+                <div
+                  className="
+                    bg-white/95 p-5 rounded-xl border
+                    shadow-sm
+                    hover:shadow-lg hover:-translate-y-1
+                    hover:ring-1 hover:ring-[#EB6D3A]/25
+                    transition duration-300
+                    flex justify-center
+                  "
+                >
                   <Image
                     src={src}
                     alt="Media Logo"
@@ -333,10 +355,10 @@ export default function PartnersMedia() {
           </Swiper>
         ))}
       </div>
-
     </div>
   </section>
 </div>
+
 
 
 
@@ -391,36 +413,44 @@ export default function PartnersMedia() {
           </div>
         </section>
 
-        {/* FULL-WIDTH CTA WITH BACKGROUND */}
-        <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw]">
-          <section className="relative overflow-hidden h-[380px] flex items-center justify-center">
-            {/* Background Image */}
-            <Image
-              src="/images/partners/join hands.jpg"
-              alt="Become a Partner"
-              fill
-              className="object-cover w-full h-full blur-[1px] brightness-65"
-            />
+       {/* CTA */}
+<div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+  <section className="relative overflow-hidden h-[380px] flex items-center justify-center">
 
-            {/* Content */}
-            <div className="relative z-10 text-center px-6 text-white">
-              <h2 className="text-4xl font-bold mb-3">
-                Want to Partner With FFP?
-              </h2>
-              <p className="max-w-xl mx-auto mb-8">
-                Join hands with Foundation Fighting Poverty-FFP to support under
-                privlidged families and communities across Pakistan.
-              </p>
+    {/* Background Image */}
+    <Image
+      src="/images/partners/join hands.jpg"
+      alt="Become a Partner"
+      fill
+      priority
+      className="object-cover brightness-[0.65]"
+    />
 
-              <a
-                href="/contact"
-                className="px-10 py-4 bg-[#EB6D3A] text-white rounded-full shadow-xl hover:bg-[#d35d32] transition text-lg font-semibold"
-              >
-                Become a Partner
-              </a>
-            </div>
-          </section>
-        </div>
+    {/*soft overlay */}
+    <div className="absolute inset-0 bg-black/35"></div>
+
+    {/* Content */}
+    <div className="relative z-10 text-center px-6 text-white">
+      <h2 className="text-4xl font-bold mb-3">
+        Want to Partner With FFP?
+      </h2>
+
+      <p className="max-w-xl mx-auto mb-8 text-gray-100">
+        Join hands with Foundation Fighting Poverty (FFP) to support
+        underprivileged families and communities across Pakistan.
+      </p>
+
+      <a
+        href="/contact"
+        className="inline-block px-10 py-4 bg-[#EB6D3A] text-white rounded-full shadow-xl hover:bg-[#d35d32] transition text-lg font-semibold"
+      >
+        Become a Partner
+      </a>
+    </div>
+
+  </section>
+</div>
+
       </div>
     </div>
   );
