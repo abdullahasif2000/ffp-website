@@ -1,4 +1,8 @@
-import Link from "next/link";
+
+
+import EmergencyNumbers from "@/components/EmergencyNumbers";
+
+import NgoList from "@/components/NgoList";
 
 import {
   FaDonate,
@@ -10,50 +14,83 @@ import {
 } from "react-icons/fa";
 
 
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fefefe] via-[#faf9f6] to-[#ffffff]">
 
- {/* PAGE HEADER */}
+{/* HERO SECTION */}
 <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-  <section className="
-    relative overflow-hidden
-    bg-gradient-to-br from-[#ffe8dc] via-[#fff1e8] to-[#ffffff]
-    py-24
-  ">
 
-    {/* Dotted texture */}
-    <div className="
-      absolute inset-0
-      bg-[radial-gradient(#eb6d3a33_1px,transparent_1px)]
-      bg-[size:22px_22px]
-      opacity-40
-      pointer-events-none
-    "></div>
+  <section
+    className="
+      relative overflow-hidden
+      min-h-[85vh]
+      flex items-center
+    "
+  >
 
+    {/* BACKGROUND IMAGE */}
+    <div className="absolute inset-4 bg-[url('/images/contact/hero-contact.avif')]
+                 bg-cover bg-center"></div>
 
-    {/* Content */}
-    <div className="relative max-w-7xl mx-auto px-6 text-center">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-        Contact Foundation Fighting Poverty
-      </h1>
+    {/* OVERLAYS */}
+    <div className="absolute inset-0 bg-black/20"></div>
+    <div className="absolute inset-0 bg-gradient-to-br from-[#EB6D3A]/30 via-transparent to-black/20"></div>
 
-      {/* Accent divider */}
-      <div className="w-28 h-1 bg-[#EB6D3A] mx-auto my-6 rounded-full"></div>
+    {/* CONTENT */}
+    <div className="relative max-w-7xl mx-auto px-6 text-center text-white mt-24">
 
-      <p className="text-gray-700 max-w-3xl mx-auto text-lg">
-        Reach out to us for donations, verified cases, partnerships, or emergency
-        assistance. We’re committed to transparency and impact.
-      </p>
+      <a
+        href="#contact-form"
+        className="
+          inline-flex items-center justify-center
+          px-12 py-4
+          bg-[#EB6D3A]
+          text-white
+          rounded-full
+          font-semibold
+          text-lg
+          shadow-xl
+          hover:bg-[#d35d32]
+          hover:scale-105
+          transition
+        "
+      >
+        Contact Us
+      </a>
+
     </div>
 
   </section>
 </div>
 
 
+{/* HERO  CONTACT SEPARATOR */}
+<div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+  <div className="relative py-20 flex justify-center">
+
+    {/* LINE WITH CIRCLES */}
+    <div className="relative flex items-center w-full max-w-3xl px-6">
+
+      {/* LEFT CIRCLE */}
+      <span className="w-3 h-3 rounded-full bg-[#009688]"></span>
+
+      {/* LINE */}
+      <span className="flex-8 h-2 mx-4 bg-gradient-to-r from-[#009688] via-[#EB6D3A]/40 to-[#009688]"></span>
+
+      {/* RIGHT CIRCLE */}
+      <span className="w-3 h-3 rounded-full bg-[#009688]"></span>
+
+    </div>
+
+  </div>
+</div>
 
 
-   {/* CONTACT PURPOSES */}
+
+
+  {/* CONTACT PURPOSES */}
 <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-28">
   <section className="relative overflow-hidden py-28">
 
@@ -63,8 +100,9 @@ export default function ContactPage() {
                  bg-cover bg-center"
     ></div>
 
-    {/* Overlay */}
-    <div className="absolute inset-0 bg-black/20"></div>
+    {/* Base Overlay */}
+    <div className="absolute inset-0 bg-black/25"></div>
+
 
     {/* Content */}
     <div className="relative max-w-7xl mx-auto px-6">
@@ -129,8 +167,7 @@ export default function ContactPage() {
 
           <p className="flex items-center gap-2 text-sm font-semibold text-gray-800 mb-5">
             <FaPhoneAlt className="text-[#EB6D3A]" />
-          
-            <span className="text-[#EB6D3A]"> +92 337 8028 418</span>
+            <span className="text-[#EB6D3A]">+92 337 8028 418</span>
           </p>
 
           <a
@@ -167,7 +204,7 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="mailto:partnerships@ffp.org.pk"
+              href="mailto:corporate@ffppk.org"
               className="text-center text-sm font-semibold
                          text-[#EB6D3A] hover:underline"
             >
@@ -190,120 +227,165 @@ export default function ContactPage() {
 </div>
 
 
-      {/* EMERGENCY NUMBERS */}
-      <section className="max-w-5xl mx-auto px-6 mb-24">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          Emergency Contact Numbers
-        </h2>
+{/* EMERGENCY + NGO SECTION WRAPPER */}
+<div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
 
-        <div className="bg-white rounded-3xl shadow-lg p-8 space-y-4 border">
+  <section
+    className="
+      relative overflow-hidden
+      bg-gradient-to-br from-[#fff4ee] via-[#fffaf7] to-white
+      py-20
+    "
+  >
 
-          <div className="flex justify-between border-b pb-3">
-            <span className="font-semibold text-[#EB6D3A]">
-              Foundation Fighting Poverty (FFP)
-            </span>
-            <span className="font-semibold">+92 333 0000000</span>
-          </div>
+    {/* TOP CURVE */}
+    <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+      <svg viewBox="0 0 1440 120" className="w-full h-[120px]">
+        <path
+          fill="#ffffff"
+          d="M0,40 C240,120 480,0 720,20 960,40 1200,100 1440,30 L1440,0 L0,0 Z"
+        />
+      </svg>
+    </div>
 
-          <div className="flex justify-between">
-            <span>Police Emergency</span>
-            <span>15</span>
-          </div>
+    {/* BACKGROUND TEXTURE */}
+    <div
+      className="
+        absolute inset-0
+        bg-[radial-gradient(#EB6D3A1f_1px,transparent_1px)]
+        bg-[size:28px_28px]
+        opacity-40
+        pointer-events-none
+      "
+    ></div>
 
-          <div className="flex justify-between">
-            <span>Fire Brigade</span>
-            <span>16</span>
-          </div>
+    {/* CONTENT CONTAINER */}
+    <div className="relative max-w-7xl mx-auto px-6">
 
-          <div className="flex justify-between">
-            <span>Rescue / Ambulance</span>
-            <span>1122</span>
-          </div>
+      {/* ================= EMERGENCY CARD ================= */}
+      <div
+        className="
+          relative
+          bg-gray-800 backdrop-blur-xl
+          rounded-[32px]
+          shadow-[0_30px_80px_-25px_rgba(0,0,0,0.25)]
+          border border-white/40
+          px-6 md:px-5 py-5
+          mb-24
+          overflow-hidden
+        "
+      >
+        {/* TOP ORANGE BAR */}
+        <div className="absolute top-0 left-0 w-full h-[3px] bg-[#EB6D3A]" />
 
-          <div className="flex justify-between">
-            <span>Edhi Ambulance</span>
-            <span>115</span>
-          </div>
+        {/* BOTTOM ORANGE BAR */}
+        <div className="absolute bottom-0 left-0 w-full h-[3px] bg-[#EB6D3A]" />
 
-          <div className="flex justify-between">
-            <span>Chhipa Ambulance</span>
-            <span>1020</span>
-          </div>
+        <EmergencyNumbers />
+      </div>
 
-          <div className="flex justify-between">
-            <span>Highway Police</span>
-            <span>130</span>
-          </div>
+      {/* ================= NGO CARD ================= */}
+      <div
+        className="
+          relative
+          bg-gray-700 backdrop-blur-xl
+          rounded-[32px]
+          shadow-[0_30px_80px_-25px_rgba(0,0,0,0.25)]
+          border border-white/40
+          px-6 md:px-5 py-5
+          overflow-hidden
+        "
+      >
+        {/* TOP ORANGE BAR */}
+        <div className="absolute top-0 left-0 w-full h-[3px] bg-[#EB6D3A]" />
 
-          <div className="flex justify-between">
-            <span>CPLC</span>
-            <span>1102</span>
-          </div>
+        {/* BOTTOM ORANGE BAR */}
+        <div className="absolute bottom-0 left-0 w-full h-[3px] bg-[#EB6D3A]" />
 
-        </div>
-      </section>
+        <NgoList />
+      </div>
 
-      {/* NGO DIRECTORY (SEO OPTIMIZED) */}
-      <section className="max-w-6xl mx-auto px-6 mb-24">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          Non-Governmental Organizations (NGOs) in Pakistan
-        </h2>
+    </div>
 
-        <p className="text-gray-600 mb-8">
-          Alphabetically listed non-governmental organizations, welfare trusts,
-          and charity foundations operating across Pakistan.
-        </p>
+    {/* BOTTOM CURVE */}
+    <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+      <svg viewBox="0 0 1440 120" className="w-full h-[120px] rotate-180">
+        <path
+          fill="#ffffff"
+          d="M0,40 C240,120 480,0 720,20 960,40 1200,100 1440,30 L1440,0 L0,0 Z"
+        />
+      </svg>
+    </div>
 
-        <div className="bg-white rounded-3xl shadow-lg p-8 border text-gray-700 leading-relaxed columns-1 sm:columns-2 lg:columns-3 gap-6">
+  </section>
+</div>
 
-          <ul className="space-y-2">
-            <li>Akhuwat Foundation</li>
-            <li>Al-Khidmat Foundation Pakistan</li>
-            <li>Ansar Burney Trust</li>
-            <li>Behbud Association</li>
-            <li>Bait-ul-Maal Pakistan</li>
-            <li>Care Foundation Pakistan</li>
-            <li>Chhipa Welfare Association</li>
-            <li>Citizens Foundation (TCF)</li>
-            <li>Edhi Foundation</li>
-            <li>Fauji Foundation</li>
-            <li>Helping Hand for Relief & Development</li>
-            <li>Indus Hospital & Health Network</li>
-            <li>Kashf Foundation</li>
-            <li>LRBT Eye Hospital</li>
-            <li>National Rural Support Programme</li>
-            <li>Pakistan Bait-ul-Maal</li>
-            <li>Pakistan Red Crescent Society</li>
-            <li>Saylani Welfare Trust</li>
-            <li>Shahid Afridi Foundation</li>
-            <li>Shaukat Khanum Memorial Hospital</li>
-            <li>SOS Children’s Villages Pakistan</li>
-            <li>Transparent Hands</li>
-            <li>Tameer-e-Millat Foundation</li>
-            <li>Ummah Welfare Trust</li>
-            <li>UNICEF Pakistan</li>
-            <li>World Vision Pakistan</li>
-          </ul>
 
-        </div>
-      </section>
 
-      {/* CTA */}
-      <section className="text-center py-20 bg-[#EB6D3A]/10">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-          Want to Work With FFP?
-        </h2>
-        <p className="text-gray-700 mb-8 max-w-xl mx-auto">
-          Whether you’re an individual, organization, or media house — we welcome collaboration.
-        </p>
 
-        <Link
-          href="/contact"
-          className="inline-block px-10 py-4 bg-[#EB6D3A] text-white rounded-full shadow-lg hover:bg-[#d35d32] transition font-semibold text-lg"
+      {/* CONTACT FORM SECTION */}
+<section id="contact-form" className="relative py-32 bg-gradient-to-br from-[#fff3ec] via-[#fffaf7] to-white">
+
+  {/* SOFT BACKGROUND TEXTURE */}
+  <div
+    className="
+      absolute inset-0
+      bg-[radial-gradient(#EB6D3A22_1px,transparent_1px)]
+      bg-[size:26px_26px]
+      opacity-40
+      pointer-events-none
+    "
+  ></div>
+
+  <div className="relative max-w-5xl mx-auto px-6">
+
+    {/* SECTION HEADER */}
+    <div className="text-center mb-14">
+      <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
+        Contact Foundation Fighting Poverty
+      </h2>
+
+      <div className="w-28 h-1 bg-[#EB6D3A] mx-auto rounded-full mb-6"></div>
+
+      <p className="text-gray-700 max-w-2xl mx-auto">
+        Please fill out the form below. Your response will be securely submitted
+        to Foundation Fighting Poverty.
+      </p>
+    </div>
+
+    {/* FORM CONTAINER */}
+    <div
+      className="
+        relative
+        bg-white
+        rounded-[36px]
+        shadow-[0_40px_90px_-30px_rgba(0,0,0,0.25)]
+        border border-gray-100
+        overflow-hidden
+      "
+    >
+      {/* TOP ACCENT */}
+      <div className="h-2 bg-[#EB6D3A]"></div>
+
+       {/* SCROLLABLE IFRAME */}
+      <div className="h-[620px] overflow-y-auto">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSck8DlwtrMy3YuLFmdsAektyelK6twVwi_jlmVXSTLitdSQ0Q/viewform?embedded=true"
+          className="w-full h-full"
+          frameBorder="0"
+          marginHeight={0}
+          marginWidth={0}
         >
-          Get in Touch
-        </Link>
-      </section>
+          Loading…
+        </iframe>
+      </div>
+
+      {/* BOTTOM ACCENT */}
+      <div className="h-2 bg-[#EB6D3A]"></div>
+    </div>
+  </div>
+</section>
+
 
     </div>
   );
