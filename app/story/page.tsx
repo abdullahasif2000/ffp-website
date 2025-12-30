@@ -444,11 +444,7 @@ export default function StoryPage() {
                 year: "Since 2021",
                 image: "/images/heroes/fatima batool.jpg",
               },
-              {
-                name: "Tambreen Afzal",
-                year: "Since 2021",
-                image: "/images/heroes/f.jpeg",
-              },
+              
               {
                 name: "Syed Umais Nadeem",
                 year: "Since 2023",

@@ -89,7 +89,8 @@ export default function Navbar() {
           </Link>
 
           {/* DESKTOP NAV LINKS */}
-          <ul className="hidden md:flex items-center gap-8 ml-10">
+          <ul className="hidden md:flex items-center gap-8 mx-auto">
+
             {/* HOME */}
             <li
               className="relative cursor-pointer"

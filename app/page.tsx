@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import Image from "next/image";
 import Slider from "react-slick";
 import React from "react";
@@ -70,7 +72,7 @@ function CounterCard({ icon: Icon, label, value }: CounterCardProps) {
 }
 
 export default function HomePage() {
-  const banners = ["/images/logo/16-years.jpg", "/images/logo/BANNER-1.jpeg"];
+  const banners = ["/images/logo/16-years.jpg", "/images/logo/BANNER-1.jpeg", "/images/team/team banner.jpg","/images/contact/contact-hero.jpg","/images/projects/csr.png"];
 
   const settings = {
     dots: false,
@@ -104,9 +106,12 @@ export default function HomePage() {
                 <p className="text-lg md:text-xl max-w-2xl mx-auto mb-6">
                   You Donate, We Serve!
                 </p>
-                <button className="bg-[#EB6D3A] px-6 py-3 rounded-full font-semibold hover:bg-orange-500 transition">
-                  Learn More
-                </button>
+                <Link href="/donate">
+  <button className="bg-[#EB6D3A] px-6 py-3 rounded-full font-semibold hover:bg-orange-500 transition">
+    Donate Now
+  </button>
+</Link>
+
               </div>
             </div>
           ))}
@@ -130,11 +135,70 @@ export default function HomePage() {
         </svg>
       </div>
 
+
+{/* counter section */}
+  <section
+  id="counters"
+  className="
+    py-16 px-6
+    bg-[#e9f3f1]
+    bg-[radial-gradient(circle_at_1px_1px,rgba(0,150,136,0.35)_1px,transparent_0),
+        linear-gradient(135deg,rgba(235,109,58,0.12),rgba(0,150,136,0.16))]
+    bg-[size:20px_20px,100%_100%]
+  "
+>
+
+
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-7 text-center tracking-wide bg-gradient-to-r from-[#009688] to-[#EB6D3A] bg-clip-text text-transparent">
+          Our Impact So Far
+        </h2>
+
+        {/* Decorative underline */}
+        <div className="w-50 h-1 bg-gradient-to-r from-[#009688] to-[#EB6D3A] mx-auto rounded-full mb-14"></div>
+
+        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-2 gap-y-4 text-center">
+
+          {[
+            { label: "Total Years Served", value: 16, icon: FaFlag },
+            { label: "Total Beneficiaries", value: 12500, icon: FaUsers },
+            { label: "Rashan Served", value: 8300, icon: FaUtensils },
+            { label: "Marriage & Rent Support", value: 420, icon: FaMoneyBill },
+            { label: "Trees Planted", value: 950, icon: FaTree },
+            { label: "Education Cases", value: 3100, icon: FaBook },
+            { label: "Medical Cases", value: 2100, icon: FaHospital },
+            { label: "Food Served", value: 5400, icon: FaUtensils },
+            { label: "Income Support", value: 780, icon: FaMoneyBill },
+            { label: "Campaigns in Pakistan", value: 65, icon: FaFlag },
+            { label: "Water Boring Beneficiaries", value: 1200, icon: FaWater },
+            { label: "Total Members", value: 350, icon: FaUsers },
+            {
+              label: "Google Career Certifications",
+              value: 1000,
+              icon: FaGoogle,
+            },
+          ].map((counter, index) => (
+            <CounterCard
+              key={index}
+              label={counter.label}
+              value={counter.value}
+              icon={counter.icon}
+            />
+          ))}
+        </div>
+      </section>
       {/*  Combined Forms Section */}
       <section id="forms" className="py-14 px-6 bg-gray-50">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-[#009688] mb-10 text-center tracking-wide">
-          Be A Part Of Our Mission
-        </h2>
+     {/* Full-width Highlight Heading */}
+<div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-14">
+  <div className="bg-gradient-to-r from-[#009688] to-[#EB6D3A] py-8">
+    <div className="max-w-6xl mx-auto px-6">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-white text-center tracking-wide">
+        Be A Part Of Our Mission
+      </h2>
+    </div>
+  </div>
+</div>
+
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Volunteer Form */}
@@ -272,44 +336,7 @@ export default function HomePage() {
         </svg>
       </div>
 
-      {/* counter section */}
-      <section id="counters" className="py-16 px-6 bg-white">
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-7 text-center tracking-wide bg-gradient-to-r from-[#009688] to-[#EB6D3A] bg-clip-text text-transparent">
-          Our Impact So Far
-        </h2>
-
-        {/* Decorative underline */}
-        <div className="w-50 h-1 bg-gradient-to-r from-[#009688] to-[#EB6D3A] mx-auto rounded-full mb-12"></div>
-
-        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
-          {[
-            { label: "Total Years Served", value: 16, icon: FaFlag },
-            { label: "Total Beneficiaries", value: 12500, icon: FaUsers },
-            { label: "Rashan Served", value: 8300, icon: FaUtensils },
-            { label: "Marriage & Rent Support", value: 420, icon: FaMoneyBill },
-            { label: "Trees Planted", value: 950, icon: FaTree },
-            { label: "Education Cases", value: 3100, icon: FaBook },
-            { label: "Medical Cases", value: 2100, icon: FaHospital },
-            { label: "Food Served", value: 5400, icon: FaUtensils },
-            { label: "Income Support", value: 780, icon: FaMoneyBill },
-            { label: "Campaigns in Pakistan", value: 65, icon: FaFlag },
-            { label: "Water Boring Beneficiaries", value: 1200, icon: FaWater },
-            { label: "Total Members", value: 350, icon: FaUsers },
-            {
-              label: "Google Career Certifications",
-              value: 150,
-              icon: FaGoogle,
-            },
-          ].map((counter, index) => (
-            <CounterCard
-              key={index}
-              label={counter.label}
-              value={counter.value}
-              icon={counter.icon}
-            />
-          ))}
-        </div>
-      </section>
+      
 
       <div className="relative -mt-1 overflow-hidden">
         <svg
@@ -587,55 +614,67 @@ export default function HomePage() {
         </svg>
       </div>
       {/* Our Existence Section */}
-      <section id="existence" className="py-20 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#009688] mb-6">
-            Our Existence
-          </h2>
-          <div className="w-24 h-1 mx-auto mb-12 bg-gradient-to-r from-[#009688] to-[#EB6D3A] rounded-full"></div>
+<section
+  id="existence"
+  className="
+    py-24 px-6
+    bg-[#eef7f6]
+    bg-[linear-gradient(120deg,rgba(0,150,136,0.2),transparent_45%),
+        radial-gradient(circle_at_bottom_right,rgba(235,109,58,0.25),transparent_55%)]
+  "
+>
+  <div className="max-w-7xl mx-auto">
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-[#009688] to-[#EB6D3A] bg-clip-text text-transparent">
+        Our Existence
+      </h2>
+      <div className="w-24 h-1 mx-auto mt-4 bg-gradient-to-r from-[#009688] to-[#EB6D3A] rounded-full"></div>
+    </div>
 
-          {/* Map Container */}
-          <div className="relative w-full max-w-3xl mx-auto">
-            {/* Pakistan Map */}
-            <img
-              src="/images/logo/pk-map.svg"
-              alt="Pakistan Map"
-              className="w-full h-auto scale-90"
-            />
+    {/* Content */}
+    <div className="grid md:grid-cols-2 gap-16 items-center">
+      {/* LEFT — Cities */}
+      <div className="space-y-6">
+        <h3 className="text-xl font-bold text-gray-800 tracking-wide">
+          Active Across Pakistan
+        </h3>
 
-            {/* Karachi */}
-            <div className="absolute top-[75%] left-[40%] transform -translate-x-1/2 -translate-y-1/2">
-              <div className="w-4 h-4 bg-[#EB6D3A] rounded-full border-2 border-white shadow-md"></div>
-              <p className="text-xs font-semibold text-gray-800 mt-1">
-                Karachi
-              </p>
-            </div>
+        <ul className="grid grid-cols-2 gap-y-4 gap-x-8 text-gray-800">
+          {[
+            "Karachi",
+            "Lahore",
+            "Islamabad",
+            "Faisalabad",
+            "Rawalpindi",
+            "Multan",
+            "Hyderabad",
+            "Peshawar",
+            "Quetta",
+            "Sialkot",
+            "Gujranwala",
+            "Bahawalpur",
+          ].map((city, index) => (
+            <li key={index} className="flex items-center gap-3">
+              <span className="text-[#EB6D3A] text-lg">📍</span>
+              <span className="font-medium">{city}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-            {/* Lahore */}
-            <div className="absolute top-[46%] left-[57%] transform -translate-x-1/2 -translate-y-1/2">
-              <div className="w-4 h-4 bg-[#009688] rounded-full border-2 border-white shadow-md"></div>
-              <p className="text-xs font-semibold text-gray-800 mt-1">Lahore</p>
-            </div>
+      {/* RIGHT — Pakistan Map */}
+      <div className="flex justify-center">
+        <img
+          src="/images/logo/pk-map.svg"
+          alt="Pakistan Map"
+          className="w-full max-w-md"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
-            {/* Islamabad */}
-            <div className="absolute top-[32%] left-[54%] transform -translate-x-1/2 -translate-y-1/2">
-              <div className="w-4 h-4 bg-[#007ACC] rounded-full border-2 border-white shadow-md"></div>
-              <p className="text-xs font-semibold text-gray-800 mt-1">
-                Islamabad
-              </p>
-            </div>
-
-            {/* Faisalabad */}
-            <div className="absolute top-[50%] left-[54%] transform -translate-x-1/2 -translate-y-1/2">
-              <div className="w-4 h-4 bg-[#FFC107] rounded-full border-2 border-white shadow-md"></div>
-              <p className="text-xs font-semibold text-gray-800 mt-1">
-                Faisalabad
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <div className="relative -mt-1 overflow-hidden">
         <svg
