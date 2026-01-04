@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <>
       {/* TOP BAR */}
-      <div className="bg-[#EB6D3A] h-10 flex items-center justify-between px-4 md:px-6 text-white text-sm">
+      <div className="bg-white h-10 flex items-center justify-between px-4 md:px-6 text-[#EB6D3A] text-sm">
         <div className="flex items-center space-x-2">
           <FaPhone />
           <span>0337-8028418</span>
@@ -65,7 +65,7 @@ export default function Navbar() {
                   <Icon />
                 </a>
                 {idx !== arr.length - 1 && (
-                  <span className="h-4 w-px bg-white/40 mx-1"></span>
+                  <span className="h-4 w-px bg-amber-700/40 mx-1"></span>
                 )}
               </div>
             );
@@ -73,226 +73,180 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* MAIN NAVBAR */}
-      <nav className="bg-[#009688] text-white px-4 md:px-8 py-2 sticky top-0 z-50 font-medium shadow-md">
-        <div className="flex items-center justify-between">
+    {/* MAIN NAVBAR */}
+<nav className="bg-gray-700 border-b border-orange-500 text-white px-4 md:px-8 py-3 sticky top-0 z-50 font-normal shadow-sm">
+  <div className="flex items-center justify-between">
 
-          {/* LOGO ON LEFT */}
-          <Link href="/">
-            <Image
-              src="/images/logo/ffp-logo.png"
-              width={150}
-              height={150}
-              alt="FFP Logo"
-              className="h-14 w-auto cursor-pointer"
-            />
-          </Link>
-
-          {/* DESKTOP NAV LINKS */}
-          <ul className="hidden md:flex items-center gap-8 mx-auto">
-
-            {/* HOME */}
-            <li
-              className="relative cursor-pointer"
-              onMouseEnter={() => setOpenDropdown("home")}
-              onMouseLeave={() => setOpenDropdown(null)}
+    {/* LEFT NAV LINKS */}
+    <ul className="hidden md:flex items-center gap-6">
+      {[
+        {
+          key: "home",
+          label: "Home",
+          href: "/",
+          items: [
+            { href: "/#banners", label: "Banners" },
+            { href: "/#volunteer-form", label: "Volunteer Form" },
+            { href: "/#internship-form", label: "Internship Form" },
+            { href: "/#counter", label: "Counter" },
+            { href: "/#vision", label: "Vision" },
+            { href: "/#sdgs", label: "SDGs" },
+            { href: "/#existence", label: "Existence" },
+            { href: "/#chairman-note", label: "Chairman Note" },
+          ],
+        },
+        {
+          key: "work",
+          label: "Work",
+          href: "/work",
+          items: [
+            { href: "/work#projects", label: "Programs (16 Projects)" },
+            { href: "/work#covid", label: "Covid" },
+            { href: "/work#flood", label: "Flood" },
+          ],
+        },
+        {
+          key: "story",
+          label: "Story",
+          href: "/story",
+          items: [
+            { href: "/story#awards", label: "Awards" },
+            { href: "/story#heroes", label: "Heroes" },
+            { href: "/story#beneficiary", label: "Beneficiary Stories" },
+            { href: "/story#history", label: "History" },
+          ],
+        },
+        {
+          key: "emergency",
+          label: "Emergency",
+          href: "/emergency",
+          items: [
+            { href: "/emergency#covid", label: "Covid" },
+            { href: "/emergency#flood", label: "Flood" },
+            { href: "/emergency#earthquake", label: "Earthquake" },
+            { href: "/emergency#first-aid", label: "First Aid" },
+            { href: "/emergency#refugee", label: "Refugee" },
+          ],
+        },
+      ].map(menu => (
+        <li key={menu.key}>
+          <div
+            className="relative"
+            onMouseEnter={() => setOpenDropdown(menu.key)}
+            onMouseLeave={() => setOpenDropdown(null)}
+          >
+            <Link
+              href={menu.href}
+              className={isActive(menu.href) ? "text-[#EB6D3A]" : ""}
             >
-              <Link href="/" className={isActive("/") ? "text-orange-200" : ""}>
-                Home
-              </Link>
+              {menu.label}
+            </Link>
+          </div>
+        </li>
+      ))}
+    </ul>
 
-              <ul
-                className={`absolute left-0 mt-2 bg-white text-[#009688] shadow-xl rounded-lg w-56 overflow-hidden transition-all duration-200 ${
-                  openDropdown === "home" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                {[
-                  { href: "/#banners", label: "Banners" },
-                  { href: "/#volunteer-form", label: "Volunteer Form" },
-                  { href: "/#internship-form", label: "Internship Form" },
-                  { href: "/#counter", label: "Counter" },
-                  { href: "/#vision", label: "Vision" },
-                  { href: "/#sdgs", label: "SDGs" },
-                  { href: "/#existence", label: "Existence" },
-                  { href: "/#chairman-note", label: "Chairman Note" },
-                ].map((item) => (
-                  <li
-                    key={item.href}
-                    className="px-5 py-2 hover:bg-gray-100 hover:text-[#EB6D3A] transition"
-                  >
-                    <Link href={item.href}>{item.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </li>
+    {/* CENTER LOGO */}
+    <Link href="/">
+      <Image
+        src="/images/logo/ffp-logo.png"
+        width={150}
+        height={150}
+        alt="FFP Logo"
+        className="h-16 w-auto hover:scale-105 transition-transform duration-300"
+      />
+    </Link>
 
-            {/* WORK */}
-            <li
-              className="relative cursor-pointer"
-              onMouseEnter={() => setOpenDropdown("work")}
-              onMouseLeave={() => setOpenDropdown(null)}
+    {/* RIGHT NAV LINKS */}
+    <ul className="hidden md:flex items-center gap-8">
+      {[
+        {
+          key: "team",
+          label: "Team",
+          href: "/team",
+          items: [
+            { href: "/team#members", label: "Members" },
+            { href: "/team#interns", label: "Interns" },
+            { href: "/team#board", label: "Board" },
+            { href: "/team#management", label: "Management" },
+            { href: "/team#chairman-note", label: "Chairman Note" },
+          ],
+        },
+        {
+          key: "donate",
+          label: "Donate",
+          href: "/donate",
+          items: [
+            { href: "/donate#bank", label: "Bank Accounts" },
+            { href: "/donate#commodity", label: "Commodity / Material" },
+            { href: "/donate#cash", label: "Cash Donation" },
+            { href: "/donate#boxes", label: "Donation Boxes" },
+            { href: "/donate#documents", label: "Documents" },
+            { href: "/donate#testimonials", label: "Testimonials" },
+          ],
+        },
+        {
+          key: "partners",
+          label: "Partners",
+          href: "/partners",
+          items: [
+            { href: "/partners#partners", label: "Partners" },
+            { href: "/partners#media", label: "Media" },
+            { href: "/partners#blog", label: "Blog" },
+          ],
+        },
+        {
+          key: "contact",
+          label: "Contact",
+          href: "/contact",
+          items: [
+            { href: "/contact#donation", label: "For Donation" },
+            { href: "/contact#cases", label: "For Cases" },
+            { href: "/contact#emergency", label: "Emergency Numbers" },
+            { href: "/contact#ngo-list", label: "List of NGOs" },
+            { href: "/contact#partnership", label: "For Partnership" },
+          ],
+        },
+      ].map(menu => (
+        <li key={menu.key}>
+          <div
+            className="relative"
+            onMouseEnter={() => setOpenDropdown(menu.key)}
+            onMouseLeave={() => setOpenDropdown(null)}
+          >
+            <Link
+              href={menu.href}
+              className={
+                menu.key === "donate"
+                  ? "bg-[#EB6D3A] text-white px-4 py-2 rounded-full font-semibold shadow-md hover:bg-orange-600 transition-all"
+                  : isActive(menu.href)
+                  ? "text-[#EB6D3A]"
+                  : ""
+              }
             >
-              <Link href="/work" className={isActive("/work") ? "text-orange-200" : ""}>
-                Work
-              </Link>
+              {menu.label}
+            </Link>
 
-              <ul
-                className={`absolute mt-2 bg-white text-[#009688] shadow-xl rounded-lg w-56 transition-all duration-200 ${
-                  openDropdown === "work" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                <li className="px-5 py-2 hover:bg-gray-100">
-                  <Link href="/work#projects">Programs (16 Projects)</Link>
+            <ul
+              className={`absolute right-0 mt-3 bg-white text-[#009688] shadow-xl rounded-xl w-56 transition-all duration-200 ${
+                openDropdown === menu.key
+                  ? "opacity-100 visible translate-y-0"
+                  : "opacity-0 invisible -translate-y-2"
+              }`}
+            >
+              {menu.items.map(item => (
+                <li
+                  key={item.href}
+                  className="px-5 py-2 hover:bg-gray-100 hover:text-[#EB6D3A]"
+                >
+                  <Link href={item.href}>{item.label}</Link>
                 </li>
-                <li className="px-5 py-2 hover:bg-gray-100">
-                  <Link href="/work#covid">Covid</Link>
-                </li>
-                <li className="px-5 py-2 hover:bg-gray-100">
-                  <Link href="/work#flood">Flood</Link>
-                </li>
-              </ul>
-            </li>
-
-            {/* STORY */}
-            <li
-              className="relative cursor-pointer"
-              onMouseEnter={() => setOpenDropdown("story")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <Link href="/story" className={isActive("/story") ? "text-orange-200" : ""}>
-                Story
-              </Link>
-
-              <ul
-                className={`absolute mt-2 bg-white text-[#009688] shadow-xl rounded-lg w-56 transition-all duration-200 ${
-                  openDropdown === "story" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/story#awards">Awards</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/story#heroes">Heroes</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/story#beneficiary">Beneficiary Stories</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/story#history">History</Link></li>
-              </ul>
-            </li>
-
-            {/* EMERGENCY */}
-            <li
-              className="relative cursor-pointer"
-              onMouseEnter={() => setOpenDropdown("emergency")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <Link
-                href="/emergency"
-                className={isActive("/emergency") ? "text-orange-200" : ""}
-              >
-                Emergency
-              </Link>
-
-              <ul
-                className={`absolute mt-2 bg-white text-[#009688] shadow-xl rounded-lg w-56 transition-all duration-200 ${
-                  openDropdown === "emergency" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/emergency#covid">Covid</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/emergency#flood">Flood</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/emergency#earthquake">Earthquake</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/emergency#first-aid">First Aid</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/emergency#refugee">Refugee</Link></li>
-              </ul>
-            </li>
-
-            {/* TEAM */}
-            <li
-              className="relative cursor-pointer"
-              onMouseEnter={() => setOpenDropdown("team")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <Link href="/team" className={isActive("/team") ? "text-orange-200" : ""}>
-                Team
-              </Link>
-
-              <ul
-                className={`absolute mt-2 bg-white text-[#009688] shadow-xl rounded-lg w-56 transition-all duration-200 ${
-                  openDropdown === "team" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/team#members">Members</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/team#interns">Interns</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/team#board">Board</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/team#management">Management</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/team#chairman-note">Chairman Note</Link></li>
-              </ul>
-            </li>
-
-            {/* DONATE */}
-            <li
-              className="relative cursor-pointer"
-              onMouseEnter={() => setOpenDropdown("donate")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <Link href="/donate" className={isActive("/donate") ? "text-orange-200" : ""}>
-                Donate
-              </Link>
-
-              <ul
-                className={`absolute mt-2 bg-white text-[#009688] shadow-xl rounded-lg w-60 transition-all duration-200 ${
-                  openDropdown === "donate" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/donate#bank">Bank Accounts</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/donate#commodity">Commodity / Material</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/donate#cash">Cash Donation</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/donate#boxes">Donation Boxes</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/donate#documents">Documents</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/donate#testimonials">Testimonials</Link></li>
-              </ul>
-            </li>
-
-            {/* PARTNERS */}
-            <li
-              className="relative cursor-pointer"
-              onMouseEnter={() => setOpenDropdown("partners")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <Link href="/partners" className={isActive("/partners") ? "text-orange-200" : ""}>
-                Partners
-              </Link>
-
-              <ul
-                className={`absolute mt-2 bg-white text-[#009688] shadow-xl rounded-lg w-56 transition-all duration-200 ${
-                  openDropdown === "partners" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/partners#partners">Partners</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/partners#media">Media</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/partners#blog">Blog</Link></li>
-              </ul>
-            </li>
-
-            {/* CONTACT */}
-            <li
-              className="relative cursor-pointer"
-              onMouseEnter={() => setOpenDropdown("contact")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <Link href="/contact" className={isActive("/contact") ? "text-orange-200" : ""}>
-                Contact
-              </Link>
-
-              <ul
-                className={`absolute mt-2 bg-white text-[#009688] shadow-xl rounded-lg w-56 transition-all duration-200 ${
-                  openDropdown === "contact" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/contact#donation">For Donation</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/contact#cases">For Cases</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/contact#emergency">Emergency Numbers</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/contact#ngo-list">List of NGOs</Link></li>
-                <li className="px-5 py-2 hover:bg-gray-100"><Link href="/contact#partnership">For Partnership</Link></li>
-              </ul>
-            </li>
-          </ul>
-
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ul>
           {/* MOBILE MENU TOGGLE */}
           <button
             className="md:hidden text-2xl"

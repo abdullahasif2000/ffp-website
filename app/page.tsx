@@ -38,41 +38,31 @@ function CounterCard({ icon: Icon, label, value }: CounterCardProps) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
-    <div ref={ref} className="relative flex items-center justify-center">
-      {/* Gradient border wrapper */}
-      <div className="rounded-full p-[3px] bg-gradient-to-r from-[#009688] to-[#EB6D3A]">
-        {/* Inner circle */}
-        <div
-          className="bg-white rounded-full shadow-lg w-36 h-36 flex flex-col 
-                     items-center justify-center p-6 transition-all duration-400 
-                     hover:shadow-2xl hover:-translate-y-1"
-        >
-          {/* Icon */}
-          <div
-            className="bg-gradient-to-br from-[#EB6D3A] to-[#009688] text-white 
-                          p-3 rounded-full mb-2 shadow-md group-hover:scale-110 
-                          transition-transform duration-300"
-          >
-            <Icon size={22} />
-          </div>
+    <div ref={ref} className="flex flex-col items-center justify-center text-center">
+  {/* Icon */}
+  <div className="mb-3 text-[#EB6D3A] opacity-90">
+    <Icon size={26} />
+  </div>
 
-          {/* Number Counter */}
-          <h3 className="text-xl md:text-2xl font-extrabold text-[#EB6D3A] mb-1 drop-shadow-sm">
-            {inView ? <CountUp end={value} duration={2.5} separator="," /> : 0}
-          </h3>
+  {/* Number */}
+  <h3 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-2">
+    {inView ? <CountUp end={value} duration={2.5} separator="," /> : 0}
+  </h3>
 
-          {/* Label */}
-          <p className="text-gray-700 font-medium text-xs md:text-sm text-center leading-snug">
-            {label}
-          </p>
-        </div>
-      </div>
-    </div>
+  {/* Thin divider */}
+  <span className="w-10 h-[1px] bg-white/30 mb-3" />
+
+  {/* Label */}
+  <p className="text-gray-300 text-sm md:text-base font-normal leading-snug">
+    {label}
+  </p>
+</div>
+
   );
 }
 
 export default function HomePage() {
-  const banners = ["/images/logo/16-years.jpg", "/images/logo/BANNER-1.jpeg", "/images/team/team banner.jpg","/images/contact/contact-hero.jpg","/images/projects/csr.png"];
+  const banners = ["/images/team/team banner.jpg","/images/contact/main-hero-cover.jpg","/images/projects/csr.png"];
 
   const settings = {
     dots: false,
@@ -141,7 +131,7 @@ export default function HomePage() {
   id="counters"
   className="
     py-16 px-6
-    bg-[#e9f3f1]
+    bg-gray-700
     bg-[radial-gradient(circle_at_1px_1px,rgba(0,150,136,0.35)_1px,transparent_0),
         linear-gradient(135deg,rgba(235,109,58,0.12),rgba(0,150,136,0.16))]
     bg-[size:20px_20px,100%_100%]
@@ -149,12 +139,12 @@ export default function HomePage() {
 >
 
 
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-7 text-center tracking-wide bg-gradient-to-r from-[#009688] to-[#EB6D3A] bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-7 text-center tracking-wide bg-white bg-clip-text text-transparent">
           Our Impact So Far
         </h2>
 
         {/* Decorative underline */}
-        <div className="w-50 h-1 bg-gradient-to-r from-[#009688] to-[#EB6D3A] mx-auto rounded-full mb-14"></div>
+        <div className="w-50 h-1 bg-[#EB6D3A] mx-auto rounded-full mb-14"></div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-2 gap-y-4 text-center">
 
@@ -186,137 +176,121 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      {/*  Combined Forms Section */}
-      <section id="forms" className="py-14 px-6 bg-gray-50">
-     {/* Full-width Highlight Heading */}
-<div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-14">
-  <div className="bg-gradient-to-r from-[#009688] to-[#EB6D3A] py-8">
-    <div className="max-w-6xl mx-auto px-6">
-      <h2 className="text-2xl md:text-3xl font-extrabold text-white text-center tracking-wide">
-        Be A Part Of Our Mission
-      </h2>
+
+      {/* Combined Forms Section */}
+<section
+  id="forms"
+  className="relative py-24 px-6 bg-gradient-to-br from-[#0f766e]/10 via-[#ffffff] to-[#EB6D3A]/10"
+>
+  {/* Full-width Highlight Heading */}
+  <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-20">
+    <div className="bg-[#0f766e] py-12">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-2xl md:text-3xl font-semibold text-white text-center tracking-wide">
+          Be A Part Of Our Mission
+        </h2>
+      </div>
     </div>
   </div>
-</div>
 
+  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14">
+    {[
+      {
+        title: "Become a Volunteer",
+        desc:
+          "Contribute your time and skills to serve communities in need across Pakistan.",
+        icon: <FaHandsHelping size={20} />,
+        link:
+          "https://docs.google.com/forms/d/e/1FAIpQLSfwOG_fqxSxDXMqdqHJlTQOodMiJQew7OvordiQaM_Tq8fsYw/viewform",
+        btn: "Volunteer",
+      },
+      {
+        title: "Internship Program",
+        desc:
+          "Gain real-world experience while working on impactful social projects.",
+        icon: <FaUserGraduate size={20} />,
+        link:
+          "https://docs.google.com/forms/d/e/1FAIpQLScliAwvbqkuHGNs6KjFHm9MBspKBmtf8sGEO_Z9UoVK8Ze_4A/viewform",
+        btn: "Apply",
+      },
+      {
+        title: "Job Application",
+        desc:
+          "Join our team and help uplift underprivileged communities.",
+        icon: <FaBriefcase size={20} />,
+        link:
+          "https://docs.google.com/forms/d/e/1FAIpQLSfk9-dj5bBT8O1eYErHWF_eXhIDUtIfPJBwqOzdtgiO6CIXPw/viewform",
+        btn: "Careers",
+      },
+      {
+        title: "Google Career Certification",
+        desc:
+          "Build in-demand skills and unlock new professional opportunitie Fully-Funded.",
+        icon: <FaCertificate size={20} />,
+        link:
+          "https://docs.google.com/forms/d/e/1FAIpQLSefmYSn0ryCL7n7HIBZ-PlKNv4ywO1V2ZbhiikY9tmAMUb7dQ/viewform",
+        btn: "Register",
+      },
+    ].map((item, index) => (
+      <div
+  key={index}
+  className="relative group backdrop-blur-xl bg-white/20
+  rounded-2xl p-8 overflow-hidden transition-all duration-300
+  hover:bg-white/30
+  before:absolute before:top-0 before:left-0 before:w-full before:h-[2px]
+  before:bg-gradient-to-r before:from-transparent before:via-[#EB6D3A]/70 before:to-transparent
+  after:absolute after:bottom-0 after:left-0 after:w-full after:h-[4px]
+  after:bg-gradient-to-r after:from-transparent after:via-[#EB6D3A]/70 after:to-transparent
+  hover:before:via-[#EB6D3A] hover:after:via-[#EB6D3A]"
+>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Volunteer Form */}
-          <div
-            className="bg-white rounded-xl border border-gray-100 shadow-md 
-              flex flex-col p-6 transition-all duration-300 
-              hover:shadow-xl hover:-translate-y-1 hover:border-[#EB6D3A]"
-          >
-            <div className="flex items-center mb-4">
-              <div className="bg-gradient-to-r from-[#EB6D3A] to-orange-500 p-3 rounded-full text-white mr-3 shadow">
-                <FaHandsHelping size={22} />
-              </div>
-              <h3 className="text-xl font-semibold text-[#009688]">
-                Become a Volunteer
-              </h3>
-            </div>
-            <p className="text-gray-600 mb-5 leading-relaxed flex-grow text-sm">
-              Join us as a volunteer and contribute your time, skills, and
-              energy towards serving communities in need. We welcome individuals
-              from all backgrounds who want to make a difference.
-            </p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfwOG_fqxSxDXMqdqHJlTQOodMiJQew7OvordiQaM_Tq8fsYw/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto inline-block bg-[#EB6D3A] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-orange-500 shadow hover:shadow-md transition transform hover:scale-105 text-center"
-            >
-              Fill Volunteer Form
-            </a>
+        {/* Arrow Cut */}
+        <div className="absolute top-0 right-0 w-16 h-16 bg-[#EB6D3A] clip-path-arrow opacity-90" />
+
+        {/* Content */}
+        <div className="relative z-10">
+          {/* Icon */}
+          <div className="text-[#EB6D3A] mb-4">
+            {item.icon}
           </div>
 
-          {/* Internship Form */}
-          <div
-            className="bg-white rounded-xl border border-gray-100 shadow-md 
-              flex flex-col p-6 transition-all duration-300 
-              hover:shadow-xl hover:-translate-y-1 hover:border-[#EB6D3A]"
-          >
-            <div className="flex items-center mb-4">
-              <div className="bg-gradient-to-r from-[#EB6D3A] to-orange-500 p-3 rounded-full text-white mr-3 shadow">
-                <FaUserGraduate size={22} />
-              </div>
-              <h3 className="text-xl font-semibold text-[#009688]">
-                Internship Program
-              </h3>
-            </div>
-            <p className="text-gray-600 mb-5 leading-relaxed flex-grow text-sm">
-              Looking for practical experience? Apply for our internship program
-              and gain hands-on exposure while working on impactful projects
-              that help communities across Pakistan.
-            </p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLScliAwvbqkuHGNs6KjFHm9MBspKBmtf8sGEO_Z9UoVK8Ze_4A/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto inline-block bg-[#EB6D3A] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-orange-500 shadow hover:shadow-md transition transform hover:scale-105 text-center"
-            >
-              Fill Internship Form
-            </a>
-          </div>
+          {/* Title */}
+          <h3 className="text-lg font-semibold text-[#0f766e] mb-2">
+            {item.title}
+          </h3>
 
-          {/* Job Application */}
-          <div
-            className="bg-white rounded-xl border border-gray-100 shadow-md 
-              flex flex-col p-6 transition-all duration-300 
-              hover:shadow-xl hover:-translate-y-1 hover:border-[#EB6D3A]"
-          >
-            <div className="flex items-center mb-4">
-              <div className="bg-gradient-to-r from-[#EB6D3A] to-orange-500 p-3 rounded-full text-white mr-3 shadow">
-                <FaBriefcase size={22} />
-              </div>
-              <h3 className="text-xl font-semibold text-[#009688]">
-                Job Application
-              </h3>
-            </div>
-            <p className="text-gray-600 mb-5 leading-relaxed flex-grow text-sm">
-              Apply for open positions at our foundation and become part of a
-              passionate team working to uplift underprivileged communities.
-            </p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfk9-dj5bBT8O1eYErHWF_eXhIDUtIfPJBwqOzdtgiO6CIXPw/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto inline-block bg-[#EB6D3A] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-orange-500 shadow hover:shadow-md transition transform hover:scale-105 text-center"
-            >
-              Apply for Jobs
-            </a>
-          </div>
+          {/* Description */}
+          <p className="text-gray-700 text-sm leading-relaxed mb-6">
+            {item.desc}
+          </p>
 
-          {/* Google Career Certificate */}
-          <div
-            className="bg-white rounded-xl border border-gray-100 shadow-md 
-              flex flex-col p-6 transition-all duration-300 
-              hover:shadow-xl hover:-translate-y-1 hover:border-[#EB6D3A]"
+          {/* CTA */}
+          <a
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium
+            text-[#EB6D3A] hover:text-orange-600 transition"
           >
-            <div className="flex items-center mb-4">
-              <div className="bg-gradient-to-r from-[#EB6D3A] to-orange-500 p-3 rounded-full text-white mr-3 shadow">
-                <FaCertificate size={22} />
-              </div>
-              <h3 className="text-xl font-semibold text-[#009688]">
-                Google Career Certification
-              </h3>
-            </div>
-            <p className="text-gray-600 mb-5 leading-relaxed flex-grow text-sm">
-              Gain in-demand skills with Google Career Certificates. Register
-              now and start your journey toward professional growth and better
-              opportunities.
-            </p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSefmYSn0ryCL7n7HIBZ-PlKNv4ywO1V2ZbhiikY9tmAMUb7dQ/viewform "
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto inline-block bg-[#EB6D3A] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-orange-500 shadow hover:shadow-md transition transform hover:scale-105 text-center"
-            >
-              Register Now
-            </a>
-          </div>
+            {item.btn}
+            <span className="transform group-hover:translate-x-1 transition">→</span>
+          </a>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+
+  {/* Arrow Clip Path */}
+ {/* Arrow Cut */}
+<div
+  className="absolute top-0 right-0 w-16 h-16 bg-[#EB6D3A] opacity-90"
+  style={{
+    clipPath: "polygon(100% 0, 0 0, 100% 100%)",
+  }}
+/>
+
+</section>
+
 
       {/* border */}
       <div className="relative -mt-1 overflow-hidden">
@@ -338,264 +312,210 @@ export default function HomePage() {
 
       
 
-      <div className="relative -mt-1 overflow-hidden">
-        <svg
-          className="w-full h-3 block"
-          viewBox="0 0 1440 10"
-          preserveAspectRatio="none"
-          shapeRendering="geometricPrecision"
-        >
-          <defs>
-            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#009688" />
-              <stop offset="100%" stopColor="#EB6D3A" />
-            </linearGradient>
-          </defs>
-          <rect width="1440" height="10" fill="url(#lineGradient)" />
-        </svg>
-      </div>
+     
+      {/* Vision & Mission Section */}
+<section
+  id="vision-mission"
+  className="relative py-28 px-6 bg-gradient-to-br from-[#0f766e]/10 via-white to-[#EB6D3A]/10"
+>
+  <div className="max-w-6xl mx-auto space-y-28">
 
-      {/*  Vision & Mission Section */}
-      <section
-        id="vision-mission"
-        className="py-20 px-6 bg-gradient-to-br from-gray-50 to-gray-100"
-      >
-        <div className="max-w-6xl mx-auto space-y-20">
-          {/* Vision Section */}
-          <div className="bg-white shadow-lg rounded-2xl p-8 text-center md:text-left">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-              {/* Logo */}
-              <img
-                src="/images/logo/logo-png.png"
-                alt="Foundation Logo"
-                className="w-40 md:w-52 drop-shadow-lg"
-              />
+    {/* ================= VISION ================= */}
+    <div
+      className="relative backdrop-blur-xl bg-white/60 rounded-3xl p-10 md:p-14 shadow-xl"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-              {/* Text */}
-              <div>
-                <h2 className="text-2xl md:text-3xl font-extrabold text-[#009688] mb-3">
-                  Our Vision
-                </h2>
+        {/* Logo */}
+<Image
+  src="/images/logo/logo-png.png"
+  alt="Foundation Logo"
+  width={288} // Adjust width as per your design
+  height={288} // Adjust height as per your design
+  className="w-48 md:w-64 lg:w-72 flex-shrink-0 drop-shadow-xl"
+/>
 
-                {/* Gradient Bar */}
-                <div className="w-24 h-1 bg-gradient-to-r from-[#009688] to-[#EB6D3A] mb-4 rounded-full mx-auto md:mx-0"></div>
 
-                {/* Paragraph */}
-                <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-2xl">
-                  Empowering people for a green, sustainable, and happy life.
-                  <br />
-                  <br />
-                  FFPs mission is to alleviate poverty in Pakistan by advancing
-                  <span className="font-semibold text-[#EB6D3A]">
-                    {" "}
-                    sustainable livelihood opportunities{" "}
-                  </span>
-                  and enhancing the resilience of vulnerable communities. We are
-                  committed to supporting underprivileged families through
-                  initiatives that improve
-                  <span className="font-semibold text-[#009688]">
-                    {" "}
-                    income generation, education, and overall well-being.{" "}
-                  </span>
-                  <br />
-                  <br />
-                  By fostering{" "}
-                  <span className="font-semibold text-[#EB6D3A]">
-                    self-reliance
-                  </span>{" "}
-                  and promoting
-                  <span className="font-semibold text-[#009688]">
-                    {" "}
-                    community-driven development,
-                  </span>{" "}
-                  we aim to contribute to a more equitable, sustainable, and
-                  prosperous society.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Mission */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#009688] text-center mb-6">
-              Scope Of Our Mission
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#009688] to-[#EB6D3A] mb-10 rounded-full mx-auto"></div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {[
-                {
-                  icon: "🌍",
-                  title: "Better Pakistan",
-                  desc: "Building a sustainable and inclusive future for our nation.",
-                },
-                {
-                  icon: "📚",
-                  title: "Educational Awareness",
-                  desc: "Spreading knowledge and opportunities for lifelong learning.",
-                },
-                {
-                  icon: "🍞",
-                  title: "Basic Needs",
-                  desc: "Providing food, shelter, and healthcare to those in need.",
-                },
-                {
-                  icon: "🗣️",
-                  title: "Social Awareness",
-                  desc: "Raising voices for equality, justice, and community strength.",
-                },
-                {
-                  icon: "🌱",
-                  title: "Environment Welfare",
-                  desc: "Promoting eco-friendly practices for a greener tomorrow.",
-                },
-                {
-                  icon: "⚖️",
-                  title: "Gender Equality",
-                  desc: "Ensuring equal opportunities and dignity for all genders.",
-                },
-                {
-                  icon: "💧",
-                  title: "Water Sanitation",
-                  desc: "Improving access to clean water and hygienic practices.",
-                },
-                {
-                  icon: "🛠️",
-                  title: "Skill Development",
-                  desc: "Equipping youth with skills for employment and growth.",
-                },
-                {
-                  icon: "🍽️",
-                  title: "No Hunger Initiative",
-                  desc: "Fighting hunger through food drives and sustainable aid.",
-                },
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-col items-center text-center bg-white p-4 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1"
-                >
-                  <div className="text-2xl bg-gradient-to-br from-[#EB6D3A] to-[#009688] text-white w-12 h-12 flex items-center justify-center rounded-full mb-3 shadow">
-                    {item.icon}
-                  </div>
-                  <h3 className="font-semibold text-[#EB6D3A] text-sm mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600 text-xs leading-snug">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      <div className="relative -mt-1 overflow-hidden">
-        <svg
-          className="w-full h-3 block"
-          viewBox="0 0 1440 10"
-          preserveAspectRatio="none"
-          shapeRendering="geometricPrecision"
-        >
-          <defs>
-            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#009688" />
-              <stop offset="100%" stopColor="#EB6D3A" />
-            </linearGradient>
-          </defs>
-          <rect width="1440" height="10" fill="url(#lineGradient)" />
-        </svg>
-      </div>
-
-      {/*  SDGs Section */}
-      <section id="sdgs" className="py-16 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#009688] text-center mb-4">
-            Our SDG Commitment
+        {/* Text */}
+        <div>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-[#0f766e] mb-4">
+            Our Vision
           </h2>
-          <div className="w-24 h-1 mx-auto mb-10 bg-gradient-to-r from-[#009688] to-[#EB6D3A] rounded-full"></div>
 
-          {/* SDG Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                num: "01",
-                title: "No Poverty",
-                desc: "End poverty in all its forms everywhere.",
-              },
-              {
-                num: "02",
-                title: "Zero Hunger",
-                desc: "Ensure food security and better nutrition.",
-              },
-              {
-                num: "03",
-                title: "Health",
-                desc: "Promote healthy lives and well-being.",
-              },
-              {
-                num: "04",
-                title: "Education",
-                desc: "Inclusive and equitable quality education.",
-              },
-              {
-                num: "05",
-                title: "Equality",
-                desc: "Achieve gender equality and empower women.",
-              },
-              {
-                num: "06",
-                title: "Clean Water",
-                desc: "Ensure access to safe water and sanitation.",
-              },
-              {
-                num: "07",
-                title: "Clean Energy",
-                desc: "Affordable and sustainable energy for all.",
-              },
-              {
-                num: "08",
-                title: "Growth",
-                desc: "Promote sustained growth and decent work.",
-              },
-              {
-                num: "13",
-                title: "Climate",
-                desc: "Take urgent action against climate change.",
-              },
-              {
-                num: "16",
-                title: "Peace & Justice",
-                desc: "Promote peaceful and inclusive societies.",
-              },
-              {
-                num: "17",
-                title: "Partnerships",
-                desc: "Strengthen global partnerships for goals.",
-              },
-            ].map((goal, idx) => (
-              <div
-                key={idx}
-                className="flex items-center bg-white p-4 rounded-xl shadow hover:shadow-md transition"
-              >
-                {/* Icon */}
-                <img
-                  src={`/images/sdgs/Goal-${goal.num}.png`}
-                  alt={goal.title}
-                  className="w-14 h-14 object-contain mr-4 flex-shrink-0"
-                />
-                {/* Text */}
-                <div>
-                  <h3 className="text-base font-semibold text-[#009688]">
-                    {goal.title}
-                  </h3>
-                  <p className="text-gray-600 text-xs">{goal.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <div className="w-20 h-[3px] bg-gradient-to-r from-[#0f766e] to-[#EB6D3A] rounded-full mb-6"></div>
+
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+            Empowering people for a green, sustainable, and happy life.
+            <br /><br />
+            FFP’s mission is to alleviate poverty in Pakistan by advancing
+            <span className="font-semibold text-[#EB6D3A]">
+              {" "}sustainable livelihood opportunities{" "}
+            </span>
+            and enhancing the resilience of vulnerable communities.
+            <br /><br />
+            We support underprivileged families through initiatives that improve
+            <span className="font-semibold text-[#0f766e]">
+              {" "}income generation, education, and overall well-being.
+            </span>
+            <br /><br />
+            By fostering{" "}
+            <span className="font-semibold text-[#EB6D3A]">self-reliance</span>{" "}
+            and promoting
+            <span className="font-semibold text-[#0f766e]">
+              {" "}community-driven development,
+            </span>{" "}
+            we aim to build a more equitable and sustainable society.
+          </p>
         </div>
-      </section>
+      </div>
+
+      {/* Soft Glow */}
+      <div className="absolute -top-6 -right-6 w-40 h-40 bg-[#EB6D3A]/20 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-[#0f766e]/20 rounded-full blur-3xl"></div>
+    </div>
+
+    {/* ================= MISSION ================= */}
+    <div>
+      <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f766e] text-center mb-6">
+        Scope Of Our Mission
+      </h2>
+
+      <div className="w-24 h-[3px] bg-gradient-to-r from-[#0f766e] to-[#EB6D3A] rounded-full mx-auto mb-14"></div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          { icon: "🌍", title: "Better Pakistan", desc: "Building a sustainable and inclusive future for our nation." },
+          { icon: "📚", title: "Educational Awareness", desc: "Spreading knowledge and opportunities for lifelong learning." },
+          { icon: "🍞", title: "Basic Needs", desc: "Providing food, shelter, and healthcare to those in need." },
+          { icon: "🗣️", title: "Social Awareness", desc: "Raising voices for equality, justice, and community strength." },
+          { icon: "🌱", title: "Environment Welfare", desc: "Promoting eco-friendly practices for a greener tomorrow." },
+          { icon: "⚖️", title: "Gender Equality", desc: "Ensuring equal opportunities and dignity for all genders." },
+          { icon: "💧", title: "Water Sanitation", desc: "Improving access to clean water and hygienic practices." },
+          { icon: "🛠️", title: "Skill Development", desc: "Equipping youth with skills for employment and growth." },
+          { icon: "🍽️", title: "No Hunger Initiative", desc: "Fighting hunger through food drives and sustainable aid." },
+        ].map((item, idx) => (
+          <div
+            key={idx}
+            className="relative group backdrop-blur-xl bg-white/50 rounded-2xl p-6
+            shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1
+            before:absolute before:top-0 before:left-0 before:w-full before:h-[2px]
+            before:bg-gradient-to-r before:from-transparent before:via-[#EB6D3A]/70 before:to-transparent
+            after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px]
+            after:bg-gradient-to-r after:from-transparent after:via-[#EB6D3A]/70 after:to-transparent"
+          >
+            <div className="text-3xl mb-4">{item.icon}</div>
+            <h3 className="font-semibold text-[#EB6D3A] mb-2 text-sm">
+              {item.title}
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+      <div className="relative -mt-1 overflow-hidden">
+        <svg
+          className="w-full h-3 block"
+          viewBox="0 0 1440 10"
+          preserveAspectRatio="none"
+          shapeRendering="geometricPrecision"
+        >
+          <defs>
+            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#009688" />
+              <stop offset="100%" stopColor="#EB6D3A" />
+            </linearGradient>
+          </defs>
+          <rect width="1440" height="10" fill="url(#lineGradient)" />
+        </svg>
+      </div>
+
+      {/* ================= SDGs SECTION ================= */}
+<section
+  id="sdgs"
+  className="relative py-20 px-6 overflow-hidden
+  bg-gradient-to-br from-gray-50 via-white to-gray-100"
+>
+  {/* Subtle Texture Overlay */}
+  <div
+    aria-hidden
+    className="absolute inset-0 opacity-[0.05] pointer-events-none"
+    style={{
+      backgroundImage:
+        "repeating-linear-gradient(45deg, rgba(0,0,0,0.5) 0, rgba(0,0,0,0.5) 2px, transparent 1px, transparent 6px)",
+    }}
+  />
+
+  <div className="relative max-w-6xl mx-auto">
+    {/* Heading */}
+    <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f766e] text-center mb-4">
+      Our SDG Commitment
+    </h2>
+
+    <div className="w-28 h-[3px] mx-auto mb-14 bg-gradient-to-r from-[#0f766e] to-[#EB6D3A] rounded-full"></div>
+
+    {/* SDG Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        { num: "01", title: "No Poverty", desc: "End poverty in all its forms everywhere." },
+        { num: "02", title: "Zero Hunger", desc: "Ensure food security and better nutrition." },
+        { num: "03", title: "Health", desc: "Promote healthy lives and well-being." },
+        { num: "04", title: "Education", desc: "Inclusive and equitable quality education." },
+        { num: "05", title: "Equality", desc: "Achieve gender equality and empower women." },
+        { num: "06", title: "Clean Water", desc: "Ensure access to safe water and sanitation." },
+        { num: "07", title: "Clean Energy", desc: "Affordable and sustainable energy for all." },
+        { num: "08", title: "Growth", desc: "Promote sustained growth and decent work." },
+        { num: "13", title: "Climate", desc: "Take urgent action against climate change." },
+        { num: "16", title: "Peace & Justice", desc: "Promote peaceful and inclusive societies." },
+        { num: "17", title: "Partnerships", desc: "Strengthen global partnerships for goals." },
+      ].map((goal, idx) => (
+        <div
+          key={idx}
+          className="relative group overflow-hidden rounded-2xl
+          bg-white/70 backdrop-blur-xl p-6
+          shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+        >
+          {/* Large SDG Number (Watermark) */}
+          <div className="absolute top-2 right-4 text-7xl font-extrabold text-gray-200 select-none">
+            {goal.num}
+          </div>
+
+          {/* Icon Badge */}
+          <div className="w-16 h-16 rounded-xl bg-white shadow flex items-center justify-center mb-5">
+            <Image
+              src={`/images/sdgs/Goal-${goal.num}.png`}
+              alt={goal.title}
+              width={48}
+              height={48}
+              className="object-contain"
+            />
+          </div>
+
+          {/* Content */}
+          <h3 className="text-lg font-semibold text-[#0f766e] mb-2">
+            {goal.title}
+          </h3>
+
+          <p className="text-sm text-gray-600 leading-relaxed max-w-[90%]">
+            {goal.desc}
+          </p>
+
+          {/* Bottom Accent */}
+          <div
+            className="absolute bottom-0 left-0 w-full h-[3px]
+            bg-gradient-to-r from-transparent via-[#EB6D3A]/70 to-transparent"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       <div className="relative -mt-1 overflow-hidden">
         <svg
